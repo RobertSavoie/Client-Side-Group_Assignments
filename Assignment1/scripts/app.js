@@ -50,20 +50,20 @@
         let MainParagraph = document.createElement("p")
         MainParagraph.setAttribute("id", "MainParagraph")
         MainParagraph.setAttribute("class", "mt-3")
-        MainParagraph.textContent = "This is the Main Paragraph!"
+        MainParagraph.textContent = "Welcome to Rob and Rhys' website!"
         MainContent.appendChild(MainParagraph);
 
         // Template strings
-        let FirstString = "This is";
-        let SecondString = `${FirstString} the Main Paragraph.`;
-        MainParagraph.textContent = SecondString;
+        // let FirstString = "This is";
+        // let SecondString = `${FirstString} the Main Paragraph.`;
+        // MainParagraph.textContent = SecondString;
 
         // Create article
-        let Article = document.createElement("article");
-        let ArticleParagraph = `<p id="ArticleParagraph" class="mt-3">This is my Article Paragraph</p>`;
-        Article.setAttribute("class", "container")
-        Article.innerHTML = ArticleParagraph;
-        MainContent.appendChild(Article);
+        // let Article = document.createElement("article");
+        // let ArticleParagraph = `<p id="ArticleParagraph" class="mt-3">This is my Article Paragraph</p>`;
+        // Article.setAttribute("class", "container")
+        // Article.innerHTML = ArticleParagraph;
+        // MainContent.appendChild(Article);
     }
     function DisplayProductsPage() {
         let HomeButton = document.getElementById("HomeBtn");
@@ -82,6 +82,22 @@
         HomeButton.addEventListener("click", function (){
             location.href = "index.html";
         });
+
+        // Rob's Paragraph
+        let RobContent = document.getElementsByTagName("main")[0];
+        let RobParagraph = document.createElement("p")
+        RobParagraph.setAttribute("id", "MainParagraph")
+        RobParagraph.setAttribute("class", "mt-3")
+        RobParagraph.textContent = "Rob's Paragraph"
+        RobContent.appendChild(RobParagraph);
+
+        // Rhys' Paragraph
+        let RhysContent = document.getElementsByTagName("main")[0];
+        let RhysParagraph = document.createElement("p")
+        RhysParagraph.setAttribute("id", "MainParagraph")
+        RhysParagraph.setAttribute("class", "mt-3")
+        RhysParagraph.textContent = "Rhys' Paragraph"
+        RhysContent.appendChild(RhysParagraph);
     }
     function DisplayContactUsPage() {
         let HomeButton = document.getElementById("HomeBtn");
