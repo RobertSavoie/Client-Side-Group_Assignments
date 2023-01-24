@@ -1,6 +1,6 @@
 .img-timetable {
-    width: 500px;
-    height: 400px;
+    width: 300px;
+    height: 200px;
 }
 
 .background {
@@ -11,6 +11,13 @@ max-width: 100%;
     font-size: large;
 }
 .rhysp1 {
+    font-family: Verdana, serif;
+    font-size: medium;
+}
+.robh1{
+    font-size: large;
+}
+.robp1{
     font-family: Verdana, serif;
     font-size: medium;
 }
