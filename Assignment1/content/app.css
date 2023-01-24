@@ -4,8 +4,10 @@
 }
 
 .background {
-max-width: 100%;
-    height: max-content;
+    background-image: url("./images/background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+
 }
 .rhysh1 {
     font-size: large;
