@@ -11,8 +11,8 @@
             case "Home":
                 DisplayHomePage();
                 break;
-            case "Our Products":
-                DisplayProductsPage();
+            case "Our Projects":
+                DisplayProjectsPage();
                 break;
             case "Our Services":
                 DisplayServicesPage();
@@ -28,9 +28,9 @@
     window.addEventListener("load", Start)
 
     function DisplayHomePage() {
-        let ProductsButton = document.getElementById("ProductsBtn");
+        let ProductsButton = document.getElementById("ProjectsBtn");
         ProductsButton.addEventListener("click", function (){
-            location.href = "products.html";
+            location.href = "projects.html";
         });
         let ServicesButton = document.getElementById("ServicesBtn");
         ServicesButton.addEventListener("click", function (){
@@ -65,7 +65,7 @@
         // Article.innerHTML = ArticleParagraph;
         // MainContent.appendChild(Article);
     }
-    function DisplayProductsPage() {
+    function DisplayProjectsPage() {
         let HomeButton = document.getElementById("HomeBtn");
         HomeButton.addEventListener("click", function (){
             location.href = "index.html";
