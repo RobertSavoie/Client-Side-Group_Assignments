@@ -1,54 +1,51 @@
-// <header>
-// <nav className="navbar navbar-expand-lg">
-//     <div className="container-fluid">
-//         <a className="navbar-brand" href="index.html"><i className="fa-solid fa-hippo"></i> WEBD6201</a>
-//         <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
-//                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-//                 aria-label="Toggle navigation">
-//             <span className="navbar-toggler-icon"></span>
-//         </button>
-//         <div className="collapse navbar-collapse" id="navbarSupportedContent">
-//             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-//                 <li className="nav-item">
-//                     <a className="nav-link" href="index.html"><i className="fa-solid fa-house"></i> Home</a>
-//                 </li>
-//                 <li id="projectsnav" className="nav-item">
-//                     <a className="nav-link" href="projects.html"><i className="fa-solid fa-inbox"></i> Projects</a>
-//                 </li>
-//                 <li className="nav-item">
-//                     <a className="nav-link active" aria-current="page" href="services.html"><i
-//                         className="fa-solid fa-bell-concierge"></i> Services</a>
-//                 </li>
-//                 <li className="nav-item">
-//                     <a className="nav-link" href="about.html"><i className="fa-solid fa-people-group"></i> About Us</a>
-//                 </li>
-//             </ul>
-//         </div>
-//     </div>
-// </nav>
-// <header>
+"use strict";
 
 function DisplayNavbar(){
 
+    // Header
     let Header = document.getElementsByTagName("header")[0];
+    // Nav
     let Nav = document.createElement("nav")
-    Header.appendChild(Nav);
-    Nav.setAttribute("class", "navbar navbar-expand-lg")
-
+    // Div
     let Div1 = document.createElement("div")
-    Nav.appendChild(Div1);
-    Div1.setAttribute("class", "container-fluid")
-
+    let Div2 = document.createElement("div")
+    // UL
+    let Ul = document.createElement("ul")
+    // Li
+    let Li1 = document.createElement("li")
+    let Li2 = document.createElement("li")
+    let Li3 = document.createElement("li")
+    let Li4 = document.createElement("li")
+    let Li5 = document.createElement("li")
+    // A
     let A1 = document.createElement("a")
+    let A2 = document.createElement("a")
+    let A3 = document.createElement("a")
+    let A4 = document.createElement("a")
+    let A5 = document.createElement("a")
+    let A6 = document.createElement("a")
+    // I
     let I1 = document.createElement("i")
-    Div1.appendChild(A1);
+    let I2 = document.createElement("i")
+    // Button
+    let Button1 = document.createElement("button")
+    // Span
+    let Span1 = document.createElement("span")
+
+    // Navbar
+    Nav.setAttribute("class", "navbar navbar-expand-lg")
+    Header.appendChild(Nav);
+
+    // First Div
+    Div1.setAttribute("class", "container-fluid")
+    Nav.appendChild(Div1);
+    // Main Link
     A1.setAttribute("class", "navbar-brand")
     A1.setAttribute("href", "index.html")
     I1.setAttribute("class", "fa-solid fa-hippo")
     A1.textContent = I1 + " WEBD6201"
-
-    let Button1 = document.createElement("button")
-    Div1.appendChild(Button1);
+    Div1.appendChild(A1);
+    // Main Button
     Button1.setAttribute("class", "navbar-toggler")
     Button1.setAttribute("type", "button")
     Button1.setAttribute("data-bs-toggle", "collapse")
@@ -56,54 +53,56 @@ function DisplayNavbar(){
     Button1.setAttribute("aria-controls", "navbarSupportedContent")
     Button1.setAttribute("aria-expanded", "false")
     Button1.setAttribute("aria-label", "Toggle navigation")
-
-    let Span1 = document.createElement("span")
-    Button1.appendChild(Span1);
+    Div1.appendChild(Button1);
+    // Span under button
     Span1.setAttribute("class", "navbar-toggler-icon")
+    Button1.appendChild(Span1);
 
-    let Div2 = document.createElement("div")
+    // Second Div
     Div1.appendChild(Div2);
-
-    let Ul = document.createElement("ul")
+    // Unordered List
+    Ul.setAttribute("class", "navbar-nav ms-auto mb-2 mb-lg-0")
     Div2.appendChild(Ul);
-
-    let Li1 = document.createElement("li")
+    // List Item 1
+    Li1.setAttribute("class", "nav-item")
     Ul.appendChild(Li1);
-    let A2 = document.createElement("a")
+    // Link 1
     A2.setAttribute("class", "nav-link")
-    A2.setAttribute("href", "#")
+    A2.setAttribute("href", "index.html")
+    A2.textContent = "Home";
     Li1.appendChild(A2);
-
-    let Li2 = document.createElement("li")
+    // List Item 2
+    Li2.setAttribute("class", "nav-item")
     Ul.appendChild(Li2);
-    let A3 = document.createElement("a")
+    // Link 2
     A3.setAttribute("class", "nav-link")
-    A3.setAttribute("href", "#")
+    A3.setAttribute("href", "projects.html")
+    A3.textContent = "Projects";
     Li2.appendChild(A3);
-
-    let Li3 = document.createElement("li")
+    // List Item 3
+    Li3.setAttribute("class", "nav-item")
     Ul.appendChild(Li3);
-    let A4 = document.createElement("a")
+    // Link 3
     A4.setAttribute("class", "nav-link")
-    A4.setAttribute("href", "#")
+    A4.setAttribute("href", "services.html")
+    A4.textContent = "Services";
     Li3.appendChild(A4);
-
-    let Li4 = document.createElement("li")
+    // List Item 4
+    Li4.setAttribute("class", "nav-item")
     Ul.appendChild(Li4);
-    let A5 = document.createElement("a")
+    // Link 4
     A5.setAttribute("class", "nav-link")
-    A5.setAttribute("href", "#")
+    A5.setAttribute("href", "about.html")
+    A5.textContent = "About Us";
     Li4.appendChild(A5);
-
-    let Li5 = document.createElement("li")
+    // List Item 5
+    Li5.setAttribute("class", "nav-item")
     Ul.appendChild(Li5);
-    let A6 = document.createElement("a")
+    // Link 5
     A6.setAttribute("class", "nav-link")
     A6.setAttribute("href", "#")
+    A6.textContent = "Human Resources";
     Li5.appendChild(A6);
-
-
-
 
 }
 

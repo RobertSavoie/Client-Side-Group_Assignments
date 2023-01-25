@@ -27,8 +27,8 @@
     }
     window.addEventListener("load", Start)
 
-
     function DisplayHomePage() {
+        // DisplayNavbar();
         let ProjectsButton = document.getElementById("ProjectsBtn");
         ProjectsButton.addEventListener("click", function (){
             location.href = "projects.html";
@@ -204,23 +204,6 @@
         HomeButton.addEventListener("click", function (){
             location.href = "index.html";
         });
-    }
-
-    function DisplayDate(){
-        // var today = new Date();
-        // var dd = String(today.getDate()).padStart(2, '0');
-        // var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-        // var yyyy = today.getFullYear();
-        //
-        // today = mm + '/' + dd + '/' + yyyy;
-        // document.write(today);
-
-        let today = new Date();
-        let dd = String(today.getDate()).padStart(2, '0');
-        let mm = String(today.getMonth() + 1).padStart(2, '0')
-        let yyyy = today.getFullYear();
-
-        today = mm + '/' + dd + '/' + yyyy;
     }
 
 })();
