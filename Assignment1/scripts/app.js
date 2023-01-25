@@ -82,11 +82,12 @@
         // Headers
         let Header1 = document.createElement("h1")
         let Header2 = document.createElement("h1")
-        // let Header3 = document.createElement("h1")
+        let Header3 = document.createElement("h2")
         // Paragraphs
         let Paragraph1 = document.createElement("p")
         let Paragraph2 = document.createElement("p")
         let Paragraph3 = document.createElement("p")
+        let Paragraph4 = document.createElement("p")
         // Images
         let Image1 = document.createElement("img")
         let Image2 = document.createElement("img")
@@ -94,9 +95,11 @@
         // Blank row
         let Blank1 = document.createElement("br")
         let Blank2 = document.createElement("br")
+
         // Horizontal line
         let Line1 = document.createElement("hr")
-        // let Line2 = document.createElement("hr")
+        let Line2 = document.createElement("hr")
+        let Line3 = document.createElement("hr")
 
         // Rob's Projects
         Main1.appendChild(Paragraph1);
@@ -108,7 +111,7 @@
         Paragraph1.appendChild(Header2);
         Paragraph1.appendChild(Line1);
         Paragraph1.appendChild(Paragraph2);
-        Paragraph2.textContent = "Here are all three of Rob's personal projects he has worked on over the years. "
+        Paragraph2.textContent = "Here are all three of Rob's personal projects he has worked on over the years."
         // Projects paragraph Rob working with amazon
         Image1.setAttribute("class", "img-amazon")
         Image1.setAttribute("src", "images/amazon.png")
@@ -129,12 +132,21 @@
         Paragraph1.appendChild(Blank2);
         Paragraph1.appendChild(Paragraph3);
         Paragraph3.textContent = "Rob has worked for Amazon, Facebook, and Twitter working on their login pages."
-
-
-
+        Paragraph1.appendChild(Line2);
+        Paragraph1.appendChild(Header3);
 
         // Rhys' Projects
-        // Main1.appendChild(Paragraph2);
+        Header3.setAttribute("class", "rhysh1")
+        Header3.textContent = "Rhys's Projects"
+        Paragraph1.appendChild(Header3);
+        Paragraph1.appendChild(Line3);
+        Paragraph1.appendChild(Paragraph4);
+        Paragraph4.textContent = "Here are all three of Rhys's personal projects he has worked on over the years."
+
+
+
+
+        // Main1.appendChild(Paragraph4);
         // Header3.setAttribute("class", "rhysh1")
         // Header3.textContent = "Rhys' Projects"
         // Paragraph2.appendChild(Header3);
