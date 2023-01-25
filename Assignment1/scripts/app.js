@@ -75,6 +75,7 @@
         // Paragraphs
         let Paragraph1 = document.createElement("p")
         let Paragraph2 = document.createElement("p")
+        let Paragraph3 = document.createElement("p")
         // Images
         let Image1 = document.createElement("img")
         let Image2 = document.createElement("img")
@@ -95,6 +96,8 @@
         Header2.textContent = "Rob's Projects"
         Paragraph1.appendChild(Header2);
         Paragraph1.appendChild(Line1);
+        Paragraph1.appendChild(Paragraph2);
+        Paragraph2.textContent = "Here are all three of Rob's personal projects he has worked on over the years. "
         // Projects paragraph Rob working with amazon
         Image1.setAttribute("class", "img-amazon")
         Image1.setAttribute("src", "images/amazon.png")
@@ -113,7 +116,11 @@
         Paragraph1.appendChild(Image3);
         Paragraph1.appendChild(Blank1);
         Paragraph1.appendChild(Blank2);
-        Paragraph2
+        Paragraph1.appendChild(Paragraph3);
+        Paragraph3.textContent = "Rob has worked for Amazon, Facebook, and Twitter working on their login pages."
+
+
+
 
         // Rhys' Projects
         // Main1.appendChild(Paragraph2);
