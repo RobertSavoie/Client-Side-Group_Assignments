@@ -108,17 +108,6 @@ function DisplayNavbar(){
 }
 
 function FooterNav(){
-
-    // <nav className="navbar fixed-bottom navbar-light">
-    //     <div className="container-fluid">
-    //         <a id="bottomnav" className="navbar-brand" href="#">WEBD6201 - Assignment 1 - Rob & Rhys &copy; </a>
-    //     </div>
-    // </nav>
-
-    let Nav = document.createElement("nav")
-    let Div = document.createElement("div")
-    let P1 = document.createElement("p")
-
     let today = new Date();
     let dd = String(today.getDate()).padStart(2, '0');
     let mm = String(today.getMonth() + 1).padStart(2, '0')
@@ -126,8 +115,23 @@ function FooterNav(){
 
     today = mm + '/' + dd + '/' + yyyy;
 
-    let nav = document.getElementById("bottomnav");
-    let a = document.createElement("a")
-    nav.appendChild(a);
-    a.textContent = today
+    let Footer = document.getElementsByTagName("footer")
+    let Nav = document.createElement("nav")
+    let Div = document.createElement("div")
+    let Span1 = document.createElement("span")
+    let Span2 = document.createElement("span")
+
+    Nav.setAttribute("class", "navbar fixed-bottom navbar-light")
+    Footer.appendChild(Nav);
+
+    Div.setAttribute("class", "container-fluid")
+    Nav.appendChild(Div);
+
+    Span1.setAttribute("class", "navbar-brand")
+    Span1.textContent = "WEBD6201 - Assignment 1 - Rob & Rhys &copy; "
+    Div.appendChild(Span1);
+
+    Span2.setAttribute("class", "navbar-brand")
+    Span2.textContent = today
+    Div.appendChild(Span2);
 }

@@ -63,6 +63,8 @@
         Paragraph1.setAttribute("class", "mt-3")
         Paragraph1.textContent = "Welcome to Rob and Rhys' website!"
         Main1.appendChild(Paragraph1);
+
+        DisplayFooterNav();
     }
 
     function DisplayProjectsPage() {
@@ -403,7 +405,36 @@
         Span8.textContent = " Contact Us";
         A7.appendChild(Span8);
         Li6.appendChild(A7);
+    }
 
+    function DisplayFooterNav(){
+        let today = new Date();
+        let dd = String(today.getDate()).padStart(2, '0');
+        let mm = String(today.getMonth() + 1).padStart(2, '0')
+        let yyyy = today.getFullYear();
+
+        today = mm + '/' + dd + '/' + yyyy;
+
+        let Footer = document.getElementsByTagName("footer")[0];
+        let Nav = document.createElement("nav")
+        let Div = document.createElement("div")
+        let Span1 = document.createElement("span")
+        let Span2 = document.createElement("span")
+        let Span3 = document.createElement("span")
+
+        Nav.setAttribute("class", "navbar fixed-bottom navbar-light")
+        Footer.appendChild(Nav);
+
+        Div.setAttribute("class", "container-fluid")
+        Nav.appendChild(Div);
+
+        Span1.setAttribute("class", "navbar-brand")
+        Span1.textContent = "WEBD6201 - Assignment 1 - Rob & Rhys©"
+        Div.appendChild(Span1);
+
+        Span3.setAttribute("class", "navbar-brand")
+        Span3.textContent = today
+        Div.appendChild(Span3);
     }
 
 })();
