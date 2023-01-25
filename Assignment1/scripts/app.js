@@ -71,19 +71,20 @@
         // Headers
         let Header1 = document.createElement("h1")
         let Header2 = document.createElement("h1")
-        let Header3 = document.createElement("h1")
+        // let Header3 = document.createElement("h1")
         // Paragraphs
         let Paragraph1 = document.createElement("p")
-        let Paragraph2 = document.createElement("p")
+        // let Paragraph2 = document.createElement("p")
         // Images
         let Image1 = document.createElement("img")
         let Image2 = document.createElement("img")
+        // let Image3 = document.createElement("img")
         // Blank row
         let Blank1 = document.createElement("br")
         let Blank2 = document.createElement("br")
         // Horizontal line
         let Line1 = document.createElement("hr")
-        let Line2 = document.createElement("hr")
+        // let Line2 = document.createElement("hr")
 
         // Rob's Projects
         Main1.appendChild(Paragraph1);
@@ -94,21 +95,27 @@
         Header2.textContent = "Rob's Projects"
         Paragraph1.appendChild(Header2);
         Paragraph1.appendChild(Line1);
-        Image1.setAttribute("class", "img-timetable")
-        Image1.setAttribute("src", "images/screenshot6.png")
+        Image1.setAttribute("class", "img-amazon")
+        Image1.setAttribute("src", "images/amazon.png")
         Paragraph1.appendChild(Image1);
+        Paragraph1.appendChild(Blank1);
+        Paragraph1.appendChild(Blank2);
+        // Projects paragraph + image2
+        Image2.setAttribute("class", "img-facebook")
+        Image2.setAttribute("src", "images/Screen_of_Facebook.png")
+        Paragraph1.appendChild(Image2);
         Paragraph1.appendChild(Blank1);
         Paragraph1.appendChild(Blank2);
 
         // Rhys' Projects
-        Main1.appendChild(Paragraph2);
-        Header3.setAttribute("class", "rhysh1")
-        Header3.textContent = "Rhys' Projects"
-        Paragraph2.appendChild(Header3);
-        Paragraph2.appendChild(Line2);
-        Image2.setAttribute("class", "img-timetable")
-        Image2.setAttribute("src", "images/screenshot6.png")
-        Paragraph2.appendChild(Image2);
+        // Main1.appendChild(Paragraph2);
+        // Header3.setAttribute("class", "rhysh1")
+        // Header3.textContent = "Rhys' Projects"
+        // Paragraph2.appendChild(Header3);
+        // Paragraph2.appendChild(Line2);
+        // Image3.setAttribute("class", "img-timetable")
+        // Image3.setAttribute("src", "images/screenshot6.png")
+        // Paragraph2.appendChild(Image2);
     }
     function DisplayServicesPage() {
         let HomeButton = document.getElementById("HomeBtn");
