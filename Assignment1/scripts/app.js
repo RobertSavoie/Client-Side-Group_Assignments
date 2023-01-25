@@ -75,15 +75,24 @@
         // Paragraphs
         let Paragraph1 = document.createElement("p")
         let Paragraph2 = document.createElement("p")
+        let Paragraph3 = document.createElement("p")
+        let Paragraph4 = document.createElement("p")
+        let Paragraph5 = document.createElement("p")
         // Images
         let Image1 = document.createElement("img")
         let Image2 = document.createElement("img")
+        let Image3 = document.createElement("img")
+        let Image4 = document.createElement("img")
         // Blank row
         let Blank1 = document.createElement("br")
         let Blank2 = document.createElement("br")
+        let Blank3 = document.createElement("br")
+        let Blank4 = document.createElement("br")
         // Horizontal line
         let Line1 = document.createElement("hr")
         let Line2 = document.createElement("hr")
+        // let Line3 = document.createElement("hr")
+        // let Line4 = document.createElement("hr")
 
         // Rob's Projects
         Main1.appendChild(Paragraph1);
@@ -94,13 +103,32 @@
         Header2.textContent = "Rob's Projects"
         Paragraph1.appendChild(Header2);
         Paragraph1.appendChild(Line1);
-        Image1.setAttribute("class", "img-timetable")
-        Image1.setAttribute("src", "images/screenshot6.png")
+        Paragraph1.appendChild(Paragraph3)
+        Paragraph3.textContent = "Rob working on twitter login page during summer internship (2006) "
+        Image1.setAttribute("class", "img-twitter")
+        Image1.setAttribute("src", "images/twitter.png")
         Paragraph1.appendChild(Image1);
         Paragraph1.appendChild(Blank1);
         Paragraph1.appendChild(Blank2);
 
-        // Rhys' Projects
+        Paragraph1.appendChild(Paragraph4)
+        Paragraph4.textContent = "Rob working on Amazon login page during summer internship (2006) "
+        Image3.setAttribute("class", "img-amazon")
+        Image3.setAttribute("src", "images/amazon.png")
+        Paragraph1.appendChild(Image3);
+        Paragraph1.appendChild(Blank3);
+        Paragraph1.appendChild(Blank4);
+        Paragraph1.appendChild(Paragraph5)
+        Paragraph5.textContent = "Rob working on Facebook login page during summer internship (2006) "
+        Image4.setAttribute("class", "img-facebook")
+        Image4.setAttribute("src", "images/Screen_of_Facebook.png")
+        Paragraph1.appendChild(Image4);
+        Paragraph1.appendChild(Blank1);
+        Paragraph1.appendChild(Blank2);
+
+
+
+        //Rhys' Projects
         Main1.appendChild(Paragraph2);
         Header3.setAttribute("class", "rhysh1")
         Header3.textContent = "Rhys' Projects"
@@ -183,7 +211,8 @@
         RhysParagraph.setAttribute("id", "MainParagraph")
         RhysParagraph.setAttribute("class", "mt-3")
         RhysParagraph.textContent = "Rhys' Paragraph"
-        RhysContent.appendChild(RhysParagraph);
+        RhysParagraph.textContent = "sdnfkldsjl"
+        RhysContent.appendChild(RhysParagraph)
     }
     function DisplayContactUsPage() {
         let HomeButton = document.getElementById("HomeBtn");

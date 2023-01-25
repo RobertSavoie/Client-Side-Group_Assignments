@@ -1,4 +1,17 @@
+.img-twitter {
+    width: 300px;
+    height: 200px;
+}
 .img-timetable {
+    width: 300px;
+    height: 200px;
+}
+.img-amazon {
+    width: 300px;
+    height: 200px;
+
+}
+.img-facebook {
     width: 300px;
     height: 200px;
 }
@@ -6,7 +19,8 @@
 .background {
     background-image: url("./images/background.png");
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover, contain;
+
 
 }
 .rhysh1 {
@@ -26,4 +40,6 @@
 .nav-item:hover {
     background-color: aqua;
 }
+
+
 
