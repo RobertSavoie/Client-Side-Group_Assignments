@@ -555,12 +555,10 @@
         Div.setAttribute("class", "container-fluid")
         Nav.appendChild(Div);
 
-        Span1.setAttribute("class", "navbar-brand")
-        Span1.textContent = "WEBD6201 - Assignment 1 - Rob & Rhys©"
         Div.appendChild(Span1);
 
-        Span2.setAttribute("class", "navbar-brand")
-        Span2.textContent = today
+        Span2.setAttribute("class", "robp1")
+        Span2.textContent = "WEBD6201 - Assignment 1 | Rob & Rhys© " + today
         Div.appendChild(Span2);
     }
 
