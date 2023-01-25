@@ -43,7 +43,8 @@ function DisplayNavbar(){
     A1.setAttribute("class", "navbar-brand")
     A1.setAttribute("href", "index.html")
     I1.setAttribute("class", "fa-solid fa-hippo")
-    A1.textContent = I1 + " WEBD6201"
+    A1.appendChild(I1);
+    A1.textContent = " WEBD6201"
     Div1.appendChild(A1);
     // Main Button
     Button1.setAttribute("class", "navbar-toggler")
