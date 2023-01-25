@@ -20,6 +20,9 @@
             case "About Us":
                 DisplayAboutUsPage();
                 break;
+            case "Human Resources":
+                DisplayHRPage();
+                break;
             case "Contact Us":
                 DisplayContactUsPage();
                 break;
@@ -28,7 +31,6 @@
     window.addEventListener("load", Start)
 
     function DisplayHomePage() {
-
         DisplayNavbar();
         let a = document.getElementsByTagName("a")[1];
         a.setAttribute("class", "nav-link active")
@@ -63,6 +65,8 @@
         Paragraph1.setAttribute("class", "mt-3")
         Paragraph1.textContent = "Welcome to Rob and Rhys' website!"
         Main1.appendChild(Paragraph1);
+
+        DisplayFooterNav();
     }
 
     function DisplayProjectsPage() {
@@ -169,7 +173,7 @@
         Paragraph1.appendChild(Paragraph5);
         Paragraph5.textContent = "Rhys has worked on installing scaffold at scotia bank arena, designed an app called parkhub and installed windows 7 through a virtual machine."
 
-
+        DisplayFooterNav();
     }
     function DisplayServicesPage() {
 
@@ -229,6 +233,8 @@
         Paragraph2.appendChild(RhysList2)
         Paragraph2.appendChild(RhysList3)
         Main1.appendChild(Paragraph2);
+
+        DisplayFooterNav();
     }
     function DisplayAboutUsPage() {
 
@@ -278,8 +284,6 @@
         Paragraph1.appendChild(Blank1);
         Paragraph1.appendChild(Blank2);
 
-
-
         // Rhys' Paragraph
         Header2.setAttribute("class", "rhysh1")
         Header2.textContent = "Rhys Thompson"
@@ -294,11 +298,36 @@
         Image2.setAttribute("src", "images/rhyswithtt.png")
         Paragraph3.appendChild(Image2);
 
-
-
+        DisplayFooterNav();
     }
-    function DisplayContactUsPage() {
 
+    function DisplayHRPage() {
+        DisplayNavbar();
+        let a = document.getElementsByTagName("a")[5];
+        a.setAttribute("class", "nav-link active")
+        a.setAttribute("aria-current", "page")
+
+        let HomeButton = document.getElementById("HomeBtn");
+        HomeButton.addEventListener("click", function(){
+            console.log("test");
+        });
+
+        let SubmitButton = document.getElementById("SubmitBtn");
+        SubmitButton.addEventListener("click", function(){
+            let Name = document.getElementById("name").value;
+            let Number = document.getElementById("number").value;
+            let Email = document.getElementById("email").value;
+            let Message = document.getElementById("message").value;
+            console.log(Name);
+            console.log(Number);
+            console.log(Email);
+            console.log(Message);
+        });
+
+        DisplayFooterNav();
+    }
+
+    function DisplayContactUsPage() {
         DisplayNavbar();
         let a = document.getElementsByTagName("a")[6];
         a.setAttribute("class", "nav-link active")
@@ -308,10 +337,11 @@
         HomeButton.addEventListener("click", function (){
             location.href = "index.html";
         });
+
+        DisplayFooterNav();
     }
 
     function DisplayNavbar(){
-
         // Header
         let Header = document.getElementsByTagName("header")[0];
         // Nav
@@ -355,7 +385,6 @@
         let Span6 = document.createElement("span")
         let Span7 = document.createElement("span")
         let Span8 = document.createElement("span")
-
 
         // Navbar
         Nav.setAttribute("class", "navbar navbar-expand-lg")
@@ -418,7 +447,7 @@
         // Link 3
         A4.setAttribute("class", "nav-link")
         A4.setAttribute("href", "services.html")
-        I4.setAttribute("class", "fa-solid fa-bell-concierge")
+        I4.setAttribute("class", "fa-solid fa-server")
         A4.appendChild(I4);
         Span5.textContent = " Services";
         A4.appendChild(Span5);
@@ -439,8 +468,8 @@
         Ul.appendChild(Li5);
         // Link 5
         A6.setAttribute("class", "nav-link")
-        A6.setAttribute("href", "#")
-        I6.setAttribute("class", "fa-solid fa-people-group")
+        A6.setAttribute("href", "human-resources.html")
+        I6.setAttribute("class", "fa-solid fa-building-user")
         A6.appendChild(I6);
         Span7.textContent = " Human Resources";
         A6.appendChild(Span7);
@@ -456,8 +485,35 @@
         Span8.textContent = " Contact Us";
         A7.appendChild(Span8);
         Li6.appendChild(A7);
+    }
 
+    function DisplayFooterNav(){
+        let today = new Date();
+        let dd = String(today.getDate()).padStart(2, '0');
+        let mm = String(today.getMonth() + 1).padStart(2, '0')
+        let yyyy = today.getFullYear();
+
+        today = mm + '/' + dd + '/' + yyyy;
+
+        let Footer = document.getElementsByTagName("footer")[0];
+        let Nav = document.createElement("nav")
+        let Div = document.createElement("div")
+        let Span1 = document.createElement("span")
+        let Span2 = document.createElement("span")
+
+        Nav.setAttribute("class", "navbar fixed-bottom navbar-light")
+        Footer.appendChild(Nav);
+
+        Div.setAttribute("class", "container-fluid")
+        Nav.appendChild(Div);
+
+        Span1.setAttribute("class", "navbar-brand")
+        Span1.textContent = "WEBD6201 - Assignment 1 - Rob & Rhys©"
+        Div.appendChild(Span1);
+
+        Span2.setAttribute("class", "navbar-brand")
+        Span2.textContent = today
+        Div.appendChild(Span2);
     }
 
 })();
-
