@@ -88,10 +88,14 @@
         let Paragraph2 = document.createElement("p")
         let Paragraph3 = document.createElement("p")
         let Paragraph4 = document.createElement("p")
+        let Paragraph5 = document.createElement("p")
         // Images
         let Image1 = document.createElement("img")
         let Image2 = document.createElement("img")
         let Image3 = document.createElement("img")
+        let Image4 = document.createElement("img")
+        let Image5 = document.createElement("img")
+        let Image6 = document.createElement("img")
         // Blank row
         let Blank1 = document.createElement("br")
         let Blank2 = document.createElement("br")
@@ -138,22 +142,34 @@
         // Rhys' Projects!!!!
         Header3.setAttribute("class", "rhysh1")
         Header3.textContent = "Rhys's Projects"
+
         Paragraph1.appendChild(Header3);
         Paragraph1.appendChild(Line3);
         Paragraph1.appendChild(Paragraph4);
+        Paragraph1.appendChild(Image4);
         Paragraph4.textContent = "Here are all three of Rhys's personal projects he has worked on over the years."
+        //Scaffold Image
+        Image4.setAttribute("class", "img-scaffold")
+        Image4.setAttribute("src", "images/scaffold.png")
+        Paragraph1.appendChild(Image4);
+        Paragraph1.appendChild(Blank1);
+        Paragraph1.appendChild(Blank2);
+        // Parkhub Image
+        Image5.setAttribute("class", "img-parkhub")
+        Image5.setAttribute("src", "images/parkhub.png")
+        Paragraph1.appendChild(Image5);
+        Paragraph1.appendChild(Blank1);
+        Paragraph1.appendChild(Blank2);
+        //Winodows 7 Image
+        Image6.setAttribute("class", "img-windows7")
+        Image6.setAttribute("src", "images/windows7.png")
+        Paragraph1.appendChild(Image6);
+        Paragraph1.appendChild(Blank1);
+        Paragraph1.appendChild(Blank2);
+        Paragraph1.appendChild(Paragraph5);
+        Paragraph5.textContent = "Rhys has worked on installing scaffold at scotia bank arena, designed an app called parkhub and installed windows 7 through a virtual machine."
 
 
-
-
-        // Main1.appendChild(Paragraph4);
-        // Header3.setAttribute("class", "rhysh1")
-        // Header3.textContent = "Rhys' Projects"
-        // Paragraph2.appendChild(Header3);
-        // Paragraph2.appendChild(Line2);
-        // Image3.setAttribute("class", "img-timetable")
-        // Image3.setAttribute("src", "images/screenshot6.png")
-        // Paragraph2.appendChild(Image2);
     }
     function DisplayServicesPage() {
 
@@ -186,7 +202,7 @@
         let RobList1 = document.createElement("li")
         let RobList2 = document.createElement("li")
         let RobList3 = document.createElement("li")
-        RobList1.textContent = "HTML/PHP"
+        RobList1.textContent = "HTML/PHP/JavaScript"
         RobList2.textContent = "C#/Visual Studio"
         RobList3.textContent = "COBOL"
         Header2.setAttribute("class", "robh1")
@@ -202,9 +218,9 @@
         let RhysList1 = document.createElement("li")
         let RhysList2 = document.createElement("li")
         let RhysList3 = document.createElement("li")
-        RhysList1.textContent = "HTML/PHP"
+        RhysList1.textContent = "Cloud"
         RhysList2.textContent = "C#/Visual Studio"
-        RhysList3.textContent = "COBOL"
+        RhysList3.textContent = "Python"
         Header3.setAttribute("class", "rhysh1")
         Header3.textContent = "Rhys' Skills:"
         Main1.appendChild(Header3);
@@ -234,27 +250,52 @@
         // Paragraphs
         let Paragraph1 = document.createElement("p")
         let Paragraph2 = document.createElement("p")
+        let Paragraph3 = document.createElement("p")
+
         // Break lines
         let Hr1 = document.createElement("hr")
 
+        // Images
+        let Image1 = document.createElement("img")
+        let Image2 = document.createElement("img")
+
+        //Blank
+        let Blank1 = document.createElement("br")
+        let Blank2 = document.createElement("br")
+
         // Rob's Paragraph
         Header1.setAttribute("class", "robh1")
-        Header1.textContent = "Rob's Paragraph"
+        Header1.textContent = "Rob Savoie"
         Main1.appendChild(Header1)
-        Paragraph1.setAttribute("class", "mt-3")
-        Paragraph1.textContent = "Rob's Paragraph"
         Main1.appendChild(Paragraph1);
         Main1.appendChild(Hr1);
+        Paragraph1.appendChild(Paragraph2);
+        Paragraph2.setAttribute("class", "mt-3")
+        Paragraph2.textContent = "Rob is a 2nd Year Student at Durham College currently enrolled in the Computer Programing Analysis program which is a 3 year course."
+        Image1.setAttribute("class", "img-amazon")
+        Image1.setAttribute("src", "images/amazon.png")
+        Paragraph1.appendChild(Image1);
+        Paragraph1.appendChild(Blank1);
+        Paragraph1.appendChild(Blank2);
+
 
 
         // Rhys' Paragraph
         Header2.setAttribute("class", "rhysh1")
-        Header2.textContent = "Rhys' Paragraph"
-        Main1.appendChild(Header2);
-        Paragraph2.setAttribute("id", "MainParagraph")
-        Paragraph2.setAttribute("class", "mt-3")
-        Paragraph2.textContent = "Rhys' Paragraph"
-        Main1.appendChild(Paragraph2);
+        Header2.textContent = "Rhys Thompson"
+        Main1.appendChild(Header2)
+        Main1.appendChild(Paragraph3);
+        Paragraph3.setAttribute("class", "mt-3")
+        Paragraph3.textContent = "Rhys is a 2nd Year Student at Durham College currently enrolled in " +
+            "the Computer Programing Course which is a 2 year course. Rhys Plans to graduate this semester!"
+        Paragraph3.appendChild(Blank1);
+        Paragraph3.appendChild(Blank2);
+        Image2.setAttribute("class", "img-rhysabu")
+        Image2.setAttribute("src", "images/rhyswithtt.png")
+        Paragraph3.appendChild(Image2);
+
+
+
     }
     function DisplayContactUsPage() {
 
