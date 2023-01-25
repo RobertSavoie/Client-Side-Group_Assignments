@@ -20,6 +20,9 @@
             case "About Us":
                 DisplayAboutUsPage();
                 break;
+            case "Human Resources":
+                DisplayHRPage();
+                break;
             case "Contact Us":
                 DisplayContactUsPage();
                 break;
@@ -28,7 +31,6 @@
     window.addEventListener("load", Start)
 
     function DisplayHomePage() {
-
         DisplayNavbar();
         let a = document.getElementsByTagName("a")[1];
         a.setAttribute("class", "nav-link active")
@@ -63,10 +65,11 @@
         Paragraph1.setAttribute("class", "mt-3")
         Paragraph1.textContent = "Welcome to Rob and Rhys' website!"
         Main1.appendChild(Paragraph1);
+
+        DisplayFooterNav();
     }
 
     function DisplayProjectsPage() {
-
         DisplayNavbar();
         let a = document.getElementsByTagName("a")[2];
         a.setAttribute("class", "nav-link active")
@@ -82,28 +85,21 @@
         // Headers
         let Header1 = document.createElement("h1")
         let Header2 = document.createElement("h1")
-        let Header3 = document.createElement("h2")
+        // let Header3 = document.createElement("h1")
         // Paragraphs
         let Paragraph1 = document.createElement("p")
         let Paragraph2 = document.createElement("p")
         let Paragraph3 = document.createElement("p")
-        let Paragraph4 = document.createElement("p")
-        let Paragraph5 = document.createElement("p")
         // Images
         let Image1 = document.createElement("img")
         let Image2 = document.createElement("img")
         let Image3 = document.createElement("img")
-        let Image4 = document.createElement("img")
-        let Image5 = document.createElement("img")
-        let Image6 = document.createElement("img")
         // Blank row
         let Blank1 = document.createElement("br")
         let Blank2 = document.createElement("br")
-
         // Horizontal line
         let Line1 = document.createElement("hr")
-        let Line2 = document.createElement("hr")
-        let Line3 = document.createElement("hr")
+        // let Line2 = document.createElement("hr")
 
         // Rob's Projects
         Main1.appendChild(Paragraph1);
@@ -115,7 +111,7 @@
         Paragraph1.appendChild(Header2);
         Paragraph1.appendChild(Line1);
         Paragraph1.appendChild(Paragraph2);
-        Paragraph2.textContent = "Here are all three of Rob's personal projects he has worked on over the years."
+        Paragraph2.textContent = "Here are all three of Rob's personal projects he has worked on over the years. "
         // Projects paragraph Rob working with amazon
         Image1.setAttribute("class", "img-amazon")
         Image1.setAttribute("src", "images/amazon.png")
@@ -136,43 +132,23 @@
         Paragraph1.appendChild(Blank2);
         Paragraph1.appendChild(Paragraph3);
         Paragraph3.textContent = "Rob has worked for Amazon, Facebook, and Twitter working on their login pages."
-        Paragraph1.appendChild(Line2);
-        Paragraph1.appendChild(Header3);
-
-        // Rhys' Projects!!!!
-        Header3.setAttribute("class", "rhysh1")
-        Header3.textContent = "Rhys's Projects"
-
-        Paragraph1.appendChild(Header3);
-        Paragraph1.appendChild(Line3);
-        Paragraph1.appendChild(Paragraph4);
-        Paragraph1.appendChild(Image4);
-        Paragraph4.textContent = "Here are all three of Rhys's personal projects he has worked on over the years."
-        //Scaffold Image
-        Image4.setAttribute("class", "img-scaffold")
-        Image4.setAttribute("src", "images/scaffold.png")
-        Paragraph1.appendChild(Image4);
-        Paragraph1.appendChild(Blank1);
-        Paragraph1.appendChild(Blank2);
-        // Parkhub Image
-        Image5.setAttribute("class", "img-parkhub")
-        Image5.setAttribute("src", "images/parkhub.png")
-        Paragraph1.appendChild(Image5);
-        Paragraph1.appendChild(Blank1);
-        Paragraph1.appendChild(Blank2);
-        //Winodows 7 Image
-        Image6.setAttribute("class", "img-windows7")
-        Image6.setAttribute("src", "images/windows7.png")
-        Paragraph1.appendChild(Image6);
-        Paragraph1.appendChild(Blank1);
-        Paragraph1.appendChild(Blank2);
-        Paragraph1.appendChild(Paragraph5);
-        Paragraph5.textContent = "Rhys has worked on installing scaffold at scotia bank arena, designed an app called parkhub and installed windows 7 through a virtual machine."
 
 
+
+
+        // Rhys' Projects
+        // Main1.appendChild(Paragraph2);
+        // Header3.setAttribute("class", "rhysh1")
+        // Header3.textContent = "Rhys' Projects"
+        // Paragraph2.appendChild(Header3);
+        // Paragraph2.appendChild(Line2);
+        // Image3.setAttribute("class", "img-timetable")
+        // Image3.setAttribute("src", "images/screenshot6.png")
+        // Paragraph2.appendChild(Image2);
+
+        DisplayFooterNav();
     }
     function DisplayServicesPage() {
-
         DisplayNavbar();
         let a = document.getElementsByTagName("a")[3];
         a.setAttribute("class", "nav-link active")
@@ -202,7 +178,7 @@
         let RobList1 = document.createElement("li")
         let RobList2 = document.createElement("li")
         let RobList3 = document.createElement("li")
-        RobList1.textContent = "HTML/PHP/JavaScript"
+        RobList1.textContent = "HTML/PHP"
         RobList2.textContent = "C#/Visual Studio"
         RobList3.textContent = "COBOL"
         Header2.setAttribute("class", "robh1")
@@ -218,9 +194,9 @@
         let RhysList1 = document.createElement("li")
         let RhysList2 = document.createElement("li")
         let RhysList3 = document.createElement("li")
-        RhysList1.textContent = "Cloud"
+        RhysList1.textContent = "HTML/PHP"
         RhysList2.textContent = "C#/Visual Studio"
-        RhysList3.textContent = "Python"
+        RhysList3.textContent = "COBOL"
         Header3.setAttribute("class", "rhysh1")
         Header3.textContent = "Rhys' Skills:"
         Main1.appendChild(Header3);
@@ -229,9 +205,10 @@
         Paragraph2.appendChild(RhysList2)
         Paragraph2.appendChild(RhysList3)
         Main1.appendChild(Paragraph2);
+
+        DisplayFooterNav();
     }
     function DisplayAboutUsPage() {
-
         DisplayNavbar();
         let a = document.getElementsByTagName("a")[4];
         a.setAttribute("class", "nav-link active")
@@ -250,55 +227,45 @@
         // Paragraphs
         let Paragraph1 = document.createElement("p")
         let Paragraph2 = document.createElement("p")
-        let Paragraph3 = document.createElement("p")
-
         // Break lines
         let Hr1 = document.createElement("hr")
 
-        // Images
-        let Image1 = document.createElement("img")
-        let Image2 = document.createElement("img")
-
-        //Blank
-        let Blank1 = document.createElement("br")
-        let Blank2 = document.createElement("br")
-
         // Rob's Paragraph
         Header1.setAttribute("class", "robh1")
-        Header1.textContent = "Rob Savoie"
+        Header1.textContent = "Rob's Paragraph"
         Main1.appendChild(Header1)
+        Paragraph1.setAttribute("class", "mt-3")
+        Paragraph1.textContent = "Rob's Paragraph"
         Main1.appendChild(Paragraph1);
         Main1.appendChild(Hr1);
-        Paragraph1.appendChild(Paragraph2);
-        Paragraph2.setAttribute("class", "mt-3")
-        Paragraph2.textContent = "Rob is a 2nd Year Student at Durham College currently enrolled in the Computer Programing Analysis program which is a 3 year course."
-        Image1.setAttribute("class", "img-amazon")
-        Image1.setAttribute("src", "images/amazon.png")
-        Paragraph1.appendChild(Image1);
-        Paragraph1.appendChild(Blank1);
-        Paragraph1.appendChild(Blank2);
-
-
 
         // Rhys' Paragraph
         Header2.setAttribute("class", "rhysh1")
-        Header2.textContent = "Rhys Thompson"
-        Main1.appendChild(Header2)
-        Main1.appendChild(Paragraph3);
-        Paragraph3.setAttribute("class", "mt-3")
-        Paragraph3.textContent = "Rhys is a 2nd Year Student at Durham College currently enrolled in " +
-            "the Computer Programing Course which is a 2 year course. Rhys Plans to graduate this semester!"
-        Paragraph3.appendChild(Blank1);
-        Paragraph3.appendChild(Blank2);
-        Image2.setAttribute("class", "img-rhysabu")
-        Image2.setAttribute("src", "images/rhyswithtt.png")
-        Paragraph3.appendChild(Image2);
+        Header2.textContent = "Rhys' Paragraph"
+        Main1.appendChild(Header2);
+        Paragraph2.setAttribute("id", "MainParagraph")
+        Paragraph2.setAttribute("class", "mt-3")
+        Paragraph2.textContent = "Rhys' Paragraph"
+        Main1.appendChild(Paragraph2);
 
-
-
+        DisplayFooterNav();
     }
-    function DisplayContactUsPage() {
 
+    function DisplayHRPage() {
+        DisplayNavbar();
+        let a = document.getElementsByTagName("a")[5];
+        a.setAttribute("class", "nav-link active")
+        a.setAttribute("aria-current", "page")
+
+        let HomeButton = document.getElementById("HomeBtn");
+        HomeButton.addEventListener("click", function (){
+            location.href = "index.html";
+        });
+
+        DisplayFooterNav();
+    }
+
+    function DisplayContactUsPage() {
         DisplayNavbar();
         let a = document.getElementsByTagName("a")[6];
         a.setAttribute("class", "nav-link active")
@@ -308,10 +275,11 @@
         HomeButton.addEventListener("click", function (){
             location.href = "index.html";
         });
+
+        DisplayFooterNav();
     }
 
     function DisplayNavbar(){
-
         // Header
         let Header = document.getElementsByTagName("header")[0];
         // Nav
@@ -355,7 +323,6 @@
         let Span6 = document.createElement("span")
         let Span7 = document.createElement("span")
         let Span8 = document.createElement("span")
-
 
         // Navbar
         Nav.setAttribute("class", "navbar navbar-expand-lg")
@@ -418,7 +385,7 @@
         // Link 3
         A4.setAttribute("class", "nav-link")
         A4.setAttribute("href", "services.html")
-        I4.setAttribute("class", "fa-solid fa-bell-concierge")
+        I4.setAttribute("class", "fa-solid fa-server")
         A4.appendChild(I4);
         Span5.textContent = " Services";
         A4.appendChild(Span5);
@@ -439,8 +406,8 @@
         Ul.appendChild(Li5);
         // Link 5
         A6.setAttribute("class", "nav-link")
-        A6.setAttribute("href", "#")
-        I6.setAttribute("class", "fa-solid fa-people-group")
+        A6.setAttribute("href", "human-resources.html")
+        I6.setAttribute("class", "fa-solid fa-building-user")
         A6.appendChild(I6);
         Span7.textContent = " Human Resources";
         A6.appendChild(Span7);
@@ -456,7 +423,35 @@
         Span8.textContent = " Contact Us";
         A7.appendChild(Span8);
         Li6.appendChild(A7);
+    }
 
+    function DisplayFooterNav(){
+        let today = new Date();
+        let dd = String(today.getDate()).padStart(2, '0');
+        let mm = String(today.getMonth() + 1).padStart(2, '0')
+        let yyyy = today.getFullYear();
+
+        today = mm + '/' + dd + '/' + yyyy;
+
+        let Footer = document.getElementsByTagName("footer")[0];
+        let Nav = document.createElement("nav")
+        let Div = document.createElement("div")
+        let Span1 = document.createElement("span")
+        let Span2 = document.createElement("span")
+
+        Nav.setAttribute("class", "navbar fixed-bottom navbar-light")
+        Footer.appendChild(Nav);
+
+        Div.setAttribute("class", "container-fluid")
+        Nav.appendChild(Div);
+
+        Span1.setAttribute("class", "navbar-brand")
+        Span1.textContent = "WEBD6201 - Assignment 1 - Rob & Rhys©"
+        Div.appendChild(Span1);
+
+        Span2.setAttribute("class", "navbar-brand")
+        Span2.textContent = today
+        Div.appendChild(Span2);
     }
 
 })();

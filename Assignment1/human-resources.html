@@ -20,8 +20,47 @@
 
 <main class="container">
     <h1 class="mb-5">Human Resources</h1>
-    <button id="HomeBtn" class="btn btn-primary">Home</button>
+    <p>
+        <button id="HomeBtn" class="btn btn-primary">Home</button>
+    </p>
+    <hr/>
+
+    <form>
+        <div class="d-flex justify-content-center row g-3 align-items-lg-start">
+            <div class="col-auto">
+                <label for="name" class="col-form-label">Name</label>
+                <input type="text" class="form-control" id="name" aria-describedby="emailHelp">
+            </div>
+        </div>
+        <br/>
+        <div class="d-flex justify-content-center row g-3 align-items-lg-start">
+            <div class="col-auto">
+                <label for="number" class="form-label">Phone Number</label>
+                <input type="number" class="form-control" id="number" aria-describedby="emailHelp">
+            </div>
+        </div>
+        <br/>
+        <div class="d-flex justify-content-center row g-3 align-items-lg-start">
+            <div class="col-auto">
+                <label for="email" class="form-label">Email Address</label>
+                <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+            </div>
+        </div>
+        <br/>
+        <div class="d-flex justify-content-center row g-3 align-items-lg-start">
+            <div class="col-md-5">
+                <label for="message" class="form-label">Short Message</label>
+                <textarea type="text" class="form-control" id="message"></textarea>
+            </div>
+        </div>
+        <br/>
+    </form>
+    <div class="d-flex justify-content-center">
+        <button id="SubmitBtn" class="btn btn-primary">Submit</button>
+    </div>
+    <br/>
 </main>
+
 
 <!-- Scripting Section -->
 <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
