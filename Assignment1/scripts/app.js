@@ -74,7 +74,7 @@
         // let Header3 = document.createElement("h1")
         // Paragraphs
         let Paragraph1 = document.createElement("p")
-        // let Paragraph2 = document.createElement("p")
+        let Paragraph2 = document.createElement("p")
         // Images
         let Image1 = document.createElement("img")
         let Image2 = document.createElement("img")
@@ -113,6 +113,7 @@
         Paragraph1.appendChild(Image3);
         Paragraph1.appendChild(Blank1);
         Paragraph1.appendChild(Blank2);
+        Paragraph2
 
         // Rhys' Projects
         // Main1.appendChild(Paragraph2);
