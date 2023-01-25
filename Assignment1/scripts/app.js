@@ -78,7 +78,7 @@
         // Images
         let Image1 = document.createElement("img")
         let Image2 = document.createElement("img")
-        // let Image3 = document.createElement("img")
+        let Image3 = document.createElement("img")
         // Blank row
         let Blank1 = document.createElement("br")
         let Blank2 = document.createElement("br")
@@ -95,15 +95,22 @@
         Header2.textContent = "Rob's Projects"
         Paragraph1.appendChild(Header2);
         Paragraph1.appendChild(Line1);
+        // Projects paragraph Rob working with amazon
         Image1.setAttribute("class", "img-amazon")
         Image1.setAttribute("src", "images/amazon.png")
         Paragraph1.appendChild(Image1);
         Paragraph1.appendChild(Blank1);
         Paragraph1.appendChild(Blank2);
-        // Projects paragraph + image2
+        // Projects paragraph Rob working with facebook
         Image2.setAttribute("class", "img-facebook")
         Image2.setAttribute("src", "images/Screen_of_Facebook.png")
         Paragraph1.appendChild(Image2);
+        Paragraph1.appendChild(Blank1);
+        Paragraph1.appendChild(Blank2);
+        // Projects paragraph Rob working with twitter
+        Image3.setAttribute("class", "img-twitter")
+        Image3.setAttribute("src", "images/twitter.png")
+        Paragraph1.appendChild(Image3);
         Paragraph1.appendChild(Blank1);
         Paragraph1.appendChild(Blank2);
 
