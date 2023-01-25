@@ -258,8 +258,20 @@
         a.setAttribute("aria-current", "page")
 
         let HomeButton = document.getElementById("HomeBtn");
-        HomeButton.addEventListener("click", function (){
-            location.href = "index.html";
+        HomeButton.addEventListener("click", function(){
+            console.log("test");
+        });
+
+        let SubmitButton = document.getElementById("SubmitBtn");
+        SubmitButton.addEventListener("click", function(){
+            let Name = document.getElementById("name").value;
+            let Number = document.getElementById("number").value;
+            let Email = document.getElementById("email").value;
+            let Message = document.getElementById("message").value;
+            console.log(Name);
+            console.log(Number);
+            console.log(Email);
+            console.log(Message);
         });
 
         DisplayFooterNav();
@@ -455,4 +467,3 @@
     }
 
 })();
-
