@@ -20,6 +20,9 @@
             case "About Us":
                 DisplayAboutUsPage();
                 break;
+            case "Human Resources":
+                DisplayHRPage();
+                break;
             case "Contact Us":
                 DisplayContactUsPage();
                 break;
@@ -28,7 +31,6 @@
     window.addEventListener("load", Start)
 
     function DisplayHomePage() {
-
         DisplayNavbar();
         let a = document.getElementsByTagName("a")[1];
         a.setAttribute("class", "nav-link active")
@@ -68,7 +70,6 @@
     }
 
     function DisplayProjectsPage() {
-
         DisplayNavbar();
         let a = document.getElementsByTagName("a")[2];
         a.setAttribute("class", "nav-link active")
@@ -144,9 +145,10 @@
         // Image3.setAttribute("class", "img-timetable")
         // Image3.setAttribute("src", "images/screenshot6.png")
         // Paragraph2.appendChild(Image2);
+
+        DisplayFooterNav();
     }
     function DisplayServicesPage() {
-
         DisplayNavbar();
         let a = document.getElementsByTagName("a")[3];
         a.setAttribute("class", "nav-link active")
@@ -203,9 +205,10 @@
         Paragraph2.appendChild(RhysList2)
         Paragraph2.appendChild(RhysList3)
         Main1.appendChild(Paragraph2);
+
+        DisplayFooterNav();
     }
     function DisplayAboutUsPage() {
-
         DisplayNavbar();
         let a = document.getElementsByTagName("a")[4];
         a.setAttribute("class", "nav-link active")
@@ -236,7 +239,6 @@
         Main1.appendChild(Paragraph1);
         Main1.appendChild(Hr1);
 
-
         // Rhys' Paragraph
         Header2.setAttribute("class", "rhysh1")
         Header2.textContent = "Rhys' Paragraph"
@@ -245,9 +247,25 @@
         Paragraph2.setAttribute("class", "mt-3")
         Paragraph2.textContent = "Rhys' Paragraph"
         Main1.appendChild(Paragraph2);
-    }
-    function DisplayContactUsPage() {
 
+        DisplayFooterNav();
+    }
+
+    function DisplayHRPage() {
+        DisplayNavbar();
+        let a = document.getElementsByTagName("a")[5];
+        a.setAttribute("class", "nav-link active")
+        a.setAttribute("aria-current", "page")
+
+        let HomeButton = document.getElementById("HomeBtn");
+        HomeButton.addEventListener("click", function (){
+            location.href = "index.html";
+        });
+
+        DisplayFooterNav();
+    }
+
+    function DisplayContactUsPage() {
         DisplayNavbar();
         let a = document.getElementsByTagName("a")[6];
         a.setAttribute("class", "nav-link active")
@@ -257,10 +275,11 @@
         HomeButton.addEventListener("click", function (){
             location.href = "index.html";
         });
+
+        DisplayFooterNav();
     }
 
     function DisplayNavbar(){
-
         // Header
         let Header = document.getElementsByTagName("header")[0];
         // Nav
@@ -304,7 +323,6 @@
         let Span6 = document.createElement("span")
         let Span7 = document.createElement("span")
         let Span8 = document.createElement("span")
-
 
         // Navbar
         Nav.setAttribute("class", "navbar navbar-expand-lg")
@@ -367,7 +385,7 @@
         // Link 3
         A4.setAttribute("class", "nav-link")
         A4.setAttribute("href", "services.html")
-        I4.setAttribute("class", "fa-solid fa-bell-concierge")
+        I4.setAttribute("class", "fa-solid fa-server")
         A4.appendChild(I4);
         Span5.textContent = " Services";
         A4.appendChild(Span5);
@@ -388,8 +406,8 @@
         Ul.appendChild(Li5);
         // Link 5
         A6.setAttribute("class", "nav-link")
-        A6.setAttribute("href", "#")
-        I6.setAttribute("class", "fa-solid fa-people-group")
+        A6.setAttribute("href", "human-resources.html")
+        I6.setAttribute("class", "fa-solid fa-building-user")
         A6.appendChild(I6);
         Span7.textContent = " Human Resources";
         A6.appendChild(Span7);
@@ -420,7 +438,6 @@
         let Div = document.createElement("div")
         let Span1 = document.createElement("span")
         let Span2 = document.createElement("span")
-        let Span3 = document.createElement("span")
 
         Nav.setAttribute("class", "navbar fixed-bottom navbar-light")
         Footer.appendChild(Nav);
@@ -432,9 +449,9 @@
         Span1.textContent = "WEBD6201 - Assignment 1 - Rob & Rhys©"
         Div.appendChild(Span1);
 
-        Span3.setAttribute("class", "navbar-brand")
-        Span3.textContent = today
-        Div.appendChild(Span3);
+        Span2.setAttribute("class", "navbar-brand")
+        Span2.textContent = today
+        Div.appendChild(Span2);
     }
 
 })();
