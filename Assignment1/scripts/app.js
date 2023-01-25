@@ -31,6 +31,7 @@
     window.addEventListener("load", Start)
 
     function DisplayHomePage() {
+
         DisplayNavbar();
         let a = document.getElementsByTagName("a")[1];
         a.setAttribute("class", "nav-link active")
@@ -51,20 +52,21 @@
 
         // Mains
         let Main1 = document.getElementsByTagName("main")[0];
+        let Main2 = document.getElementsByTagName("main")[1];
         // Headers
         let Header1 = document.createElement("h1")
         // Paragraphs
         let Paragraph1 = document.createElement("p")
 
         // Welcome header
-        Header1.setAttribute("class", "mb-5")
+        Header1.setAttribute("class", "mb-3")
         Header1.textContent = "Welcome to Our Website!"
         Main1.appendChild(Header1);
 
         // Welcome paragraph
         Paragraph1.setAttribute("class", "mt-3")
         Paragraph1.textContent = "Welcome to Rob and Rhys' website!"
-        Main1.appendChild(Paragraph1);
+        Main2.appendChild(Paragraph1);
 
         DisplayFooterNav();
     }
@@ -83,6 +85,7 @@
 
         // Mains
         let Main1 = document.getElementsByTagName("main")[0];
+        let Main2 = document.getElementsByTagName("main")[1];
         // Headers
         let Header1 = document.createElement("h1")
         let Header2 = document.createElement("h1")
@@ -110,10 +113,10 @@
         let Line3 = document.createElement("hr")
 
         // Rob's Projects
-        Main1.appendChild(Paragraph1);
-        Header1.setAttribute("class", "mb-5")
+        Main1.appendChild(Header1);
+        Main2.appendChild(Paragraph1);
+        Header1.setAttribute("class", "mb-3")
         Header1.textContent = "Rob and Rhys' Projects"
-        Paragraph1.appendChild(Header1);
         Header2.setAttribute("class", "robh1")
         Header2.textContent = "Rob's Projects"
         Paragraph1.appendChild(Header2);
@@ -189,6 +192,7 @@
 
         // Mains
         let Main1 = document.getElementsByTagName("main")[0];
+        let Main2 = document.getElementsByTagName("main")[1];
         // Headers
         let Header1 = document.createElement("h1")
         let Header2 = document.createElement("h1")
@@ -198,8 +202,8 @@
         let Paragraph2 = document.createElement("p")
 
         // Main Header
-        Header1.setAttribute("class", "mb-5")
-        Header1.textContent = "Services we provide:"
+        Header1.setAttribute("class", "mb-3")
+        Header1.textContent = "Services We Provide:"
         Main1.appendChild(Header1);
 
         // Rob's services
@@ -211,12 +215,12 @@
         RobList3.textContent = "COBOL"
         Header2.setAttribute("class", "robh1")
         Header2.textContent = "Rob's Skills:"
-        Main1.appendChild(Header2);
+        Main2.appendChild(Header2);
         Paragraph1.setAttribute("class", "mt-3")
         Paragraph1.appendChild(RobList1)
         Paragraph1.appendChild(RobList2)
         Paragraph1.appendChild(RobList3)
-        Main1.appendChild(Paragraph1);
+        Main2.appendChild(Paragraph1);
 
         // Rhys services
         let RhysList1 = document.createElement("li")
@@ -227,12 +231,12 @@
         RhysList3.textContent = "Python"
         Header3.setAttribute("class", "rhysh1")
         Header3.textContent = "Rhys' Skills:"
-        Main1.appendChild(Header3);
+        Main2.appendChild(Header3);
         Paragraph2.setAttribute("class", "mt-3")
         Paragraph2.appendChild(RhysList1)
         Paragraph2.appendChild(RhysList2)
         Paragraph2.appendChild(RhysList3)
-        Main1.appendChild(Paragraph2);
+        Main2.appendChild(Paragraph2);
 
         DisplayFooterNav();
     }
@@ -250,36 +254,39 @@
 
         // Mains
         let Main1 = document.getElementsByTagName("main")[0];
+        let Main2 = document.getElementsByTagName("main")[1];
         // Headers
         let Header1 = document.createElement("h1")
         let Header2 = document.createElement("h1")
+        let Header3 = document.createElement("h1")
         // Paragraphs
         let Paragraph1 = document.createElement("p")
         let Paragraph2 = document.createElement("p")
         let Paragraph3 = document.createElement("p")
-
         // Break lines
         let Hr1 = document.createElement("hr")
-
         // Images
         let Image1 = document.createElement("img")
         let Image2 = document.createElement("img")
-
         //Blank
         let Blank1 = document.createElement("br")
         let Blank2 = document.createElement("br")
 
+        Header3.setAttribute("class", "mb-3")
+        Header3.textContent = "About Us"
+        Main1.appendChild(Header3);
+
         // Rob's Paragraph
         Header1.setAttribute("class", "robh1")
         Header1.textContent = "Rob Savoie"
-        Main1.appendChild(Header1)
-        Main1.appendChild(Paragraph1);
-        Main1.appendChild(Hr1);
+        Main2.appendChild(Header1)
+        Main2.appendChild(Paragraph1);
+        Main2.appendChild(Hr1);
         Paragraph1.appendChild(Paragraph2);
         Paragraph2.setAttribute("class", "mt-3")
         Paragraph2.textContent = "Rob is a 2nd Year Student at Durham College currently enrolled in the Computer Programing Analysis program which is a 3 year course."
-        Image1.setAttribute("class", "img-amazon")
-        Image1.setAttribute("src", "images/amazon.png")
+        Image1.setAttribute("class", "img-square")
+        Image1.setAttribute("src", "images/Rob.jpg")
         Paragraph1.appendChild(Image1);
         Paragraph1.appendChild(Blank1);
         Paragraph1.appendChild(Blank2);
@@ -287,8 +294,8 @@
         // Rhys' Paragraph
         Header2.setAttribute("class", "rhysh1")
         Header2.textContent = "Rhys Thompson"
-        Main1.appendChild(Header2)
-        Main1.appendChild(Paragraph3);
+        Main2.appendChild(Header2)
+        Main2.appendChild(Paragraph3);
         Paragraph3.setAttribute("class", "mt-3")
         Paragraph3.textContent = "Rhys is a 2nd Year Student at Durham College currently enrolled in " +
             "the Computer Programing Course which is a 2 year course. Rhys Plans to graduate this semester!"
@@ -324,6 +331,16 @@
             console.log(Message);
         });
 
+        // Mains
+        let Main1 = document.getElementsByTagName("main")[0];
+        // let Main2 = document.getElementsByTagName("main")[1];
+        // Headers
+        let Header1 = document.createElement("h1")
+
+        Header1.setAttribute("class", "mb-3")
+        Header1.textContent = "Human Resources"
+        Main1.appendChild(Header1);
+
         DisplayFooterNav();
     }
 
@@ -337,6 +354,37 @@
         HomeButton.addEventListener("click", function (){
             location.href = "index.html";
         });
+
+        // Mains
+        let Main1 = document.getElementsByTagName("main")[0];
+        let Main2 = document.getElementsByTagName("main")[1];
+        // Headers
+        let Header1 = document.createElement("h1")
+        let Header2 = document.createElement("h5")
+        let Header3 = document.createElement("h5")
+        // Break line
+        let Hr1 = document.createElement("hr")
+        // Paragraphs
+        let Paragraph1 = document.createElement("p")
+        let Paragraph2 = document.createElement("p")
+
+        Header1.setAttribute("class", "mb-3")
+        Header1.textContent = "Contact Us"
+        Main1.appendChild(Header1);
+
+        Header2.setAttribute("class", "mb-3")
+        Header2.textContent = "Rob Savoie"
+        Main2.appendChild(Header2);
+        Paragraph1.textContent = "Email Address: robert.savoie1@dcmail.ca"
+        Main2.appendChild(Paragraph1);
+
+        Main2.appendChild(Hr1);
+
+        Header3.setAttribute("class", "mb-3")
+        Header3.textContent = "Rhys Thompson"
+        Main2.appendChild(Header3);
+        Paragraph2.textContent = "Email Address: rhys.thompson@dcmail.ca"
+        Main2.appendChild(Paragraph2);
 
         DisplayFooterNav();
     }
