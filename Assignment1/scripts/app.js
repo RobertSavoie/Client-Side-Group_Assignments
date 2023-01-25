@@ -27,6 +27,7 @@
     }
     window.addEventListener("load", Start)
 
+
     function DisplayHomePage() {
         let ProjectsButton = document.getElementById("ProjectsBtn");
         ProjectsButton.addEventListener("click", function (){
@@ -57,7 +58,6 @@
         Paragraph1.setAttribute("class", "mt-3")
         Paragraph1.textContent = "Welcome to Rob and Rhys' website!"
         Main1.appendChild(Paragraph1);
-
     }
 
     function DisplayProjectsPage() {
@@ -169,21 +169,35 @@
             location.href = "index.html";
         });
 
+        // Mains
+        let Main1 = document.getElementsByTagName("main")[0];
+        // Headers
+        let Header1 = document.createElement("h1")
+        let Header2 = document.createElement("h1")
+        // Paragraphs
+        let Paragraph1 = document.createElement("p")
+        let Paragraph2 = document.createElement("p")
+        // Break lines
+        let Hr1 = document.createElement("hr")
+
         // Rob's Paragraph
-        let RobContent = document.getElementsByTagName("main")[0];
-        let RobParagraph = document.createElement("p")
-        RobParagraph.setAttribute("id", "MainParagraph")
-        RobParagraph.setAttribute("class", "mt-3")
-        RobParagraph.textContent = "Rob's Paragraph"
-        RobContent.appendChild(RobParagraph);
+        Header1.setAttribute("class", "robh1")
+        Header1.textContent = "Rob's Paragraph"
+        Main1.appendChild(Header1)
+        Paragraph1.setAttribute("class", "mt-3")
+        Paragraph1.textContent = "Rob's Paragraph"
+        Main1.appendChild(Paragraph1);
+        Main1.appendChild(Hr1);
+
 
         // Rhys' Paragraph
-        let RhysContent = document.getElementsByTagName("main")[0];
-        let RhysParagraph = document.createElement("p")
-        RhysParagraph.setAttribute("id", "MainParagraph")
-        RhysParagraph.setAttribute("class", "mt-3")
-        RhysParagraph.textContent = "Rhys' Paragraph"
-        RhysContent.appendChild(RhysParagraph);
+        Header2.setAttribute("class", "rhysh1")
+        Header2.textContent = "Rhys' Paragraph"
+        Main1.appendChild(Header2);
+        Paragraph2.setAttribute("id", "MainParagraph")
+        Paragraph2.setAttribute("class", "mt-3")
+        Paragraph2.textContent = "Rhys' Paragraph"
+        Main1.appendChild(Paragraph2);
     }
     function DisplayContactUsPage() {
         let HomeButton = document.getElementById("HomeBtn");
@@ -192,6 +206,22 @@
         });
     }
 
+    function DisplayDate(){
+        // var today = new Date();
+        // var dd = String(today.getDate()).padStart(2, '0');
+        // var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+        // var yyyy = today.getFullYear();
+        //
+        // today = mm + '/' + dd + '/' + yyyy;
+        // document.write(today);
+
+        let today = new Date();
+        let dd = String(today.getDate()).padStart(2, '0');
+        let mm = String(today.getMonth() + 1).padStart(2, '0')
+        let yyyy = today.getFullYear();
+
+        today = mm + '/' + dd + '/' + yyyy;
+    }
 
 })();
 
