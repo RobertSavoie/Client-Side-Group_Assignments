@@ -352,14 +352,14 @@
 
         let SubmitButton = document.getElementById("SubmitBtn");
         SubmitButton.addEventListener("click", function(){
-            let Name = document.getElementById("name").value;
-            let Number = document.getElementById("number").value;
-            let Email = document.getElementById("email").value;
-            let Message = document.getElementById("message").value;
-            console.log(Name);
-            console.log(Number);
-            console.log(Email);
-            console.log(Message);
+        let Name = document.getElementById("name").value;
+        let Number = document.getElementById("number").value;
+        let Email = document.getElementById("email").value;
+        let Message = document.getElementById("message").value;
+        console.log(Name);
+        console.log(Number);
+        console.log(Email);
+        console.log(Message);
         });
 
         // (main) This generates the main tag
