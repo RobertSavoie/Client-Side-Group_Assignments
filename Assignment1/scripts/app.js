@@ -9,8 +9,6 @@
  * and the bottom navbar having our groups name plus the current date.
  */
 
-
-
 "use strict";
 
 //IIFE - Immediately Invoked Function Expression
@@ -67,6 +65,14 @@
         AboutUsButton.addEventListener("click", function(){
             location.href = "about.html";
         });
+        let HRButton = document.getElementById("HRBtn");
+        HRButton.addEventListener("click", function(){
+            location.href = "human-resources.html";
+        });
+        let ContactUsButton = document.getElementById("ContactBtn");
+        ContactUsButton.addEventListener("click", function(){
+            location.href = "contact.html";
+        });
 
         // Mains
         let Main1 = document.getElementsByTagName("main")[0];
@@ -91,6 +97,7 @@
          */
         DisplayFooterNav();
     }
+
     /** @DisplayProjectsPage
      * This function displays the projects page on our website.
      */
@@ -201,6 +208,7 @@
 
         DisplayFooterNav();
     }
+
     /** @DisplayServicePage
      * This function displays our services page.
      */
@@ -266,6 +274,7 @@
 
         DisplayFooterNav();
     }
+
     /** @DisplayAboutUsPage
      * This function displays the About Us page on our website.
      */
@@ -336,6 +345,7 @@
 
         DisplayFooterNav();
     }
+
     /** @DisplayHRPage
      * This function displays the Human Resources page on our website.
      */
@@ -378,6 +388,7 @@
 
         DisplayFooterNav();
     }
+
     /** @DisplayContactUsPage
      * This function displays the Contact Us page on our website.
      */
@@ -425,6 +436,7 @@
 
         DisplayFooterNav();
     }
+
     /** @DisplayNavbar
      * This function displays the top navbar on our website.
      */
@@ -573,6 +585,7 @@
         A7.appendChild(Span8);
         Li6.appendChild(A7);
     }
+
     /** @DisplayFooterNav
      * This function displays the bottom navbar on our website.
      */
@@ -602,5 +615,4 @@
         Span2.textContent = "WEBD6201 - Assignment 1 | Rob & Rhys© " + today
         Div.appendChild(Span2);
     }
-
 })();
