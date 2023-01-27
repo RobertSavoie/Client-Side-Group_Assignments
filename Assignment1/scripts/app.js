@@ -445,7 +445,7 @@
         let Li4 = document.createElement("li")
         let Li5 = document.createElement("li")
         let Li6 = document.createElement("li")
-        // (a) This generates the a tag
+        // (a) This generates the "a" tag
         let A1 = document.createElement("a")
         let A2 = document.createElement("a")
         let A3 = document.createElement("a")
