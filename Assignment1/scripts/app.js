@@ -136,7 +136,6 @@
         // Blank row. Displays a blank row to create spacing.
         let Blank1 = document.createElement("br")
         let Blank2 = document.createElement("br")
-
         // Horizontal line. Displays dividing line between the headers, paragraphs and pictures.
         let Line1 = document.createElement("hr")
         let Line2 = document.createElement("hr")
@@ -372,8 +371,6 @@
             console.log(Message)
             /// This sets the 3-second delay which will transfer user back to home page.
             setTimeout(() => {location.href="index.html"}, 3000);
-
-
         });
 
         // (main) This generates the main tag
