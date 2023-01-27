@@ -359,7 +359,11 @@
             console.log(Name);
             console.log(Number);
             console.log(Email);
-            console.log(Message);
+            console.log(Message)
+            /// This sets the 3-second delay which will transfer user back to home page.
+            setTimeout(() => {location.href="index.html"}, 3000);
+
+
         });
 
         // (main) This generates the main tag
