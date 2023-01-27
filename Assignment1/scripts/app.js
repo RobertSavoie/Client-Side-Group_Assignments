@@ -1,9 +1,24 @@
+/**
+ * Name: Rob Savoie & Rhys Thompson
+ * Last Update: 1/25/2023
+ * Current Update: 1/26/2023
+ * File Name: app.js
+ * Description: This is our JavaScript file using a different variety of different functions & tags.
+ * In this assignment our group demonstrates the different types of logic used to create a basic webpage
+ * including two navbars. The top navbar contains the websites name, 5 options for the user to choose from,
+ * and the bottom navbar having our groups name plus the current date.
+ */
+
+
+
 "use strict";
 
 //IIFE - Immediately Invoked Function Expression
 //AKA  - Anonymous Self-Executing Function
 (function(){
-
+    /** @Start
+     * This function loads all the information about the pages from JavaScript to our website.
+     */
     function Start() {
         console.log("App Started!")
         switch(document.title)
@@ -30,6 +45,9 @@
     }
     window.addEventListener("load", Start)
 
+    /** @DisplayHomePage
+     * This function displays the home page when user clicks the home button.
+     */
     function DisplayHomePage() {
 
         DisplayNavbar();
@@ -68,9 +86,14 @@
         Paragraph1.textContent = "Welcome to Rob and Rhys' website!"
         Main2.appendChild(Paragraph1);
 
+        /** @DisplayFooterNave
+         * This function displays the footer nav bar which contains the current date and partner names.
+         */
         DisplayFooterNav();
     }
-
+    /** @DisplayProjectsPage
+     * This function displays the projects page on our website.
+     */
     function DisplayProjectsPage() {
 
         DisplayNavbar();
@@ -83,36 +106,36 @@
             location.href = "index.html";
         });
 
-        // Mains
+        // Mains This generates the main tag in JavaScript
         let Main1 = document.getElementsByTagName("main")[0];
         let Main2 = document.getElementsByTagName("main")[1];
-        // Headers
+        // Headers This generates the h1 and h2 tag in JavaScript
         let Header1 = document.createElement("h1")
         let Header2 = document.createElement("h1")
         let Header3 = document.createElement("h2")
-        // Paragraphs
+        //  This generates the p tag in JavaScript
         let Paragraph1 = document.createElement("p")
         let Paragraph2 = document.createElement("p")
         let Paragraph3 = document.createElement("p")
         let Paragraph4 = document.createElement("p")
         let Paragraph5 = document.createElement("p")
-        // Images
+        // Images. This generates the img tag in JavaScript
         let Image1 = document.createElement("img")
         let Image2 = document.createElement("img")
         let Image3 = document.createElement("img")
         let Image4 = document.createElement("img")
         let Image5 = document.createElement("img")
         let Image6 = document.createElement("img")
-        // Blank row
+        // Blank row. Displays a blank row to create spacing.
         let Blank1 = document.createElement("br")
         let Blank2 = document.createElement("br")
 
-        // Horizontal line
+        // Horizontal line. Displays dividing line between the headers, paragraphs and pictures.
         let Line1 = document.createElement("hr")
         let Line2 = document.createElement("hr")
         let Line3 = document.createElement("hr")
 
-        // Rob's Projects
+        // Rob's Projects. This line displays information about rob on the projects page.
         Main1.appendChild(Header1);
         Main2.appendChild(Paragraph1);
         Header1.setAttribute("class", "mb-3")
@@ -146,7 +169,7 @@
         Paragraph1.appendChild(Line2);
         Paragraph1.appendChild(Header3);
 
-        // Rhys' Projects!!!!
+        // Rhys' Projects!!!! This displays a small header for Rhys's projects
         Header3.setAttribute("class", "rhysh1")
         Header3.textContent = "Rhys's Projects"
 
@@ -155,19 +178,19 @@
         Paragraph1.appendChild(Paragraph4);
         Paragraph1.appendChild(Image4);
         Paragraph4.textContent = "Here are all three of Rhys's personal projects he has worked on over the years."
-        //Scaffold Image
+        //This row of code displays the Scaffold Image.
         Image4.setAttribute("class", "img-scaffold")
         Image4.setAttribute("src", "images/scaffold.png")
         Paragraph1.appendChild(Image4);
         Paragraph1.appendChild(Blank1);
         Paragraph1.appendChild(Blank2);
-        // Parkhub Image
+        // This row of code displays the Parkhub Image
         Image5.setAttribute("class", "img-parkhub")
         Image5.setAttribute("src", "images/parkhub.png")
         Paragraph1.appendChild(Image5);
         Paragraph1.appendChild(Blank1);
         Paragraph1.appendChild(Blank2);
-        //Winodows 7 Image
+        //This row of code displays the Winodows 7 Image
         Image6.setAttribute("class", "img-windows7")
         Image6.setAttribute("src", "images/windows7.png")
         Paragraph1.appendChild(Image6);
@@ -178,6 +201,9 @@
 
         DisplayFooterNav();
     }
+    /** @DisplayServicePage
+     * This function displays our services page.
+     */
     function DisplayServicesPage() {
 
         DisplayNavbar();
@@ -240,6 +266,9 @@
 
         DisplayFooterNav();
     }
+    /** @DisplayAboutUsPage
+     * This function displays the About Us page on our website.
+     */
     function DisplayAboutUsPage() {
 
         DisplayNavbar();
@@ -276,7 +305,7 @@
         Header3.textContent = "About Us"
         Main1.appendChild(Header3);
 
-        // Rob's Paragraph
+        // Rob's Paragraph. This describes information about Ron which includes an image of him.
         Header1.setAttribute("class", "robh1")
         Header1.textContent = "Rob Savoie"
         Main2.appendChild(Header1)
@@ -291,7 +320,7 @@
         Paragraph1.appendChild(Blank1);
         Paragraph1.appendChild(Blank2);
 
-        // Rhys' Paragraph
+        // Rhys' Paragraph. This section describes the information about Rhys and includes an image of him.
         Header2.setAttribute("class", "rhysh1")
         Header2.textContent = "Rhys Thompson"
         Main2.appendChild(Header2)
@@ -307,7 +336,9 @@
 
         DisplayFooterNav();
     }
-
+    /** @DisplayHRPage
+     * This function displays the Human Resources page on our website.
+     */
     function DisplayHRPage() {
         DisplayNavbar();
         let a = document.getElementsByTagName("a")[5];
@@ -331,10 +362,10 @@
             console.log(Message);
         });
 
-        // Mains
+        // (main) This generates the main tag
         let Main1 = document.getElementsByTagName("main")[0];
         // let Main2 = document.getElementsByTagName("main")[1];
-        // Headers
+        // (h) this generates the h tag
         let Header1 = document.createElement("h1")
 
         Header1.setAttribute("class", "mb-3")
@@ -343,7 +374,9 @@
 
         DisplayFooterNav();
     }
-
+    /** @DisplayContactUsPage
+     * This function displays the Contact Us page on our website.
+     */
     function DisplayContactUsPage() {
         DisplayNavbar();
         let a = document.getElementsByTagName("a")[6];
@@ -355,16 +388,16 @@
             location.href = "index.html";
         });
 
-        // Mains
+        // (main) This generates the main tag
         let Main1 = document.getElementsByTagName("main")[0];
         let Main2 = document.getElementsByTagName("main")[1];
-        // Headers
+        // (h) This generates the header tag
         let Header1 = document.createElement("h1")
         let Header2 = document.createElement("h5")
         let Header3 = document.createElement("h5")
-        // Break line
+        // (hr) This generates the break line tag
         let Hr1 = document.createElement("hr")
-        // Paragraphs
+        // (p) This generates the break line tag
         let Paragraph1 = document.createElement("p")
         let Paragraph2 = document.createElement("p")
 
@@ -388,25 +421,27 @@
 
         DisplayFooterNav();
     }
-
+    /** @DisplayNavbar
+     * This function displays the top navbar on our website.
+     */
     function DisplayNavbar(){
-        // Header
+        // (Header) This generates the header tag
         let Header = document.getElementsByTagName("header")[0];
         // Nav
         let Nav = document.createElement("nav")
-        // Div
+        // (div) This generates the div tag
         let Div1 = document.createElement("div")
         let Div2 = document.createElement("div")
-        // UL
+        // (ul) this generates the ul tag
         let Ul = document.createElement("ul")
-        // Li
+        // (li) this generates the li tag
         let Li1 = document.createElement("li")
         let Li2 = document.createElement("li")
         let Li3 = document.createElement("li")
         let Li4 = document.createElement("li")
         let Li5 = document.createElement("li")
         let Li6 = document.createElement("li")
-        // A
+        // (a) This generates the a tag
         let A1 = document.createElement("a")
         let A2 = document.createElement("a")
         let A3 = document.createElement("a")
@@ -414,7 +449,7 @@
         let A5 = document.createElement("a")
         let A6 = document.createElement("a")
         let A7 = document.createElement("a")
-        // I
+        // (i) This generates the i tag
         let I1 = document.createElement("i")
         let I2 = document.createElement("i")
         let I3 = document.createElement("i")
@@ -422,9 +457,9 @@
         let I5 = document.createElement("i")
         let I6 = document.createElement("i")
         let I7 = document.createElement("i")
-        // Button
+        // Button This generates the button tag
         let Button1 = document.createElement("button")
-        // Span
+        // Span. This generates the span tag
         let Span1 = document.createElement("span")
         let Span2 = document.createElement("span")
         let Span3 = document.createElement("span")
@@ -534,7 +569,9 @@
         A7.appendChild(Span8);
         Li6.appendChild(A7);
     }
-
+    /** @DisplayFooterNav
+     * This function displays the bottom navbar on our website.
+     */
     function DisplayFooterNav(){
         let today = new Date();
         let dd = String(today.getDate()).padStart(2, '0');
