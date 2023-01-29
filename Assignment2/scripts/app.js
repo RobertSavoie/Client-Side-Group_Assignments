@@ -445,15 +445,7 @@
         // (div) This generates the div tag
         let Div1 = document.createElement("div")
         let Div2 = document.createElement("div")
-        // (ul) this generates the ul tag
-        let Ul = document.createElement("ul")
-        // (li) this generates the li tag
-        let Li1 = document.createElement("li")
-        let Li2 = document.createElement("li")
-        let Li3 = document.createElement("li")
-        let Li4 = document.createElement("li")
-        let Li5 = document.createElement("li")
-        let Li6 = document.createElement("li")
+        let Div3 = document.createElement("div")
         // (a) This generates the "a" tag
         let A1 = document.createElement("a")
         let A2 = document.createElement("a")
@@ -486,7 +478,7 @@
         Nav.setAttribute("class", "navbar navbar-expand-lg")
         Header.appendChild(Nav);
 
-        // First Div
+        // Main Div
         Div1.setAttribute("class", "container-fluid")
         Nav.appendChild(Div1);
         // Main Link
@@ -497,12 +489,13 @@
         Span2.textContent = " WEBD6201"
         A1.appendChild(Span2);
         Div1.appendChild(A1);
-        // Main Button
+
+        // Collapse Button
         Button1.setAttribute("class", "navbar-toggler")
         Button1.setAttribute("type", "button")
         Button1.setAttribute("data-bs-toggle", "collapse")
-        Button1.setAttribute("data-bs-target", "#navbarSupportedContent")
-        Button1.setAttribute("aria-controls", "navbarSupportedContent")
+        Button1.setAttribute("data-bs-target", "#navbarNavAltMarkup")
+        Button1.setAttribute("aria-controls", "navbarNavAltMarkup")
         Button1.setAttribute("aria-expanded", "false")
         Button1.setAttribute("aria-label", "Toggle navigation")
         Div1.appendChild(Button1);
@@ -510,14 +503,13 @@
         Span1.setAttribute("class", "navbar-toggler-icon")
         Button1.appendChild(Span1);
 
-        // Second Div
+        // Div 2
+        Div2.setAttribute("class", "collapse navbar-collapse")
+        Div2.setAttribute("id", "navbarNavAltMarkup")
         Div1.appendChild(Div2);
-        // Unordered List
-        Ul.setAttribute("class", "navbar-nav ms-auto mb-2 mb-lg-0")
-        Div2.appendChild(Ul);
-        // List Item 1
-        Li1.setAttribute("class", "nav-item")
-        Ul.appendChild(Li1);
+        // Div 3
+        Div3.setAttribute("class", "navbar-nav ms-auto mb-2 mb-lg-0")
+        Div2.appendChild(Div3);
         // Link 1
         A2.setAttribute("class", "nav-link")
         A2.setAttribute("href", "index.html")
@@ -525,10 +517,7 @@
         A2.appendChild(I2);
         Span3.textContent = " Home"
         A2.appendChild(Span3);
-        Li1.appendChild(A2);
-        // List Item 2
-        Li2.setAttribute("class", "nav-item")
-        Ul.appendChild(Li2);
+        Div3.appendChild(A2);
         // Link 2
         A3.setAttribute("class", "nav-link")
         A3.setAttribute("href", "projects.html")
@@ -536,10 +525,7 @@
         A3.appendChild(I3);
         Span4.textContent = " Projects";
         A3.appendChild(Span4);
-        Li2.appendChild(A3);
-        // List Item 3
-        Li3.setAttribute("class", "nav-item")
-        Ul.appendChild(Li3);
+        Div3.appendChild(A3);
         // Link 3
         A4.setAttribute("class", "nav-link")
         A4.setAttribute("href", "services.html")
@@ -547,10 +533,7 @@
         A4.appendChild(I4);
         Span5.textContent = " Services";
         A4.appendChild(Span5);
-        Li3.appendChild(A4);
-        // List Item 4
-        Li4.setAttribute("class", "nav-item")
-        Ul.appendChild(Li4);
+        Div3.appendChild(A4);
         // Link 4
         A5.setAttribute("class", "nav-link")
         A5.setAttribute("href", "about.html")
@@ -558,10 +541,7 @@
         A5.appendChild(I5);
         Span6.textContent = " About Us";
         A5.appendChild(Span6);
-        Li4.appendChild(A5);
-        // List Item 5
-        Li5.setAttribute("class", "nav-item")
-        Ul.appendChild(Li5);
+        Div3.appendChild(A5);
         // Link 5
         A6.setAttribute("class", "nav-link")
         A6.setAttribute("href", "human-resources.html")
@@ -569,10 +549,7 @@
         A6.appendChild(I6);
         Span7.textContent = " Human Resources";
         A6.appendChild(Span7);
-        Li5.appendChild(A6);
-        // List Item 6
-        Li6.setAttribute("class", "nav-item")
-        Ul.appendChild(Li6);
+        Div3.appendChild(A6);
         // Link 6
         A7.setAttribute("class", "nav-link")
         A7.setAttribute("href", "contact.html")
@@ -580,7 +557,7 @@
         A7.appendChild(I7);
         Span8.textContent = " Contact Us";
         A7.appendChild(Span8);
-        Li6.appendChild(A7);
+        Div3.appendChild(A7);
     }
 
     /** @DisplayFooterNav
