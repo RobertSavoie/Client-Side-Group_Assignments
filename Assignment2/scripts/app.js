@@ -559,7 +559,7 @@
             /^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]{2,10}$/,
             "Please enter a valid email address (ex. example@email.com");
         // Enter password validation
-        ValidateField("#password",
+        new CheckPassword("#password",
             /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{6,}$/,
             "Please enter a valid password. Must have a minimum of 6 characters, " +
             "1 letter, and one special character. (ex. ");
@@ -593,8 +593,8 @@
         let password = $("#password");
         let confirm_password = $("#confirmPassword");
 
-        if (password.length !== 2){
-            if (password === confirm_password){
+        if (confirm_password !== 0){
+            if (confirm_password === password){
                 messageArea.removeAttr("class").hide();
             }else{
                 $(this).trigger("focus").trigger("select"); // go back to the fullName text
