@@ -451,8 +451,6 @@
     function DisplayLoginPage(){
         console.log("Display Login Page")
 
-
-
         let messageArea = $("#messageArea");
         messageArea.hide();
         $("#loginBtn").on("click", function(){
@@ -476,7 +474,7 @@
                 }
                 else{
                     $("#userName").trigger("focus").trigger("select");
-                    messageArea.addClass("alert alert-danger").text("Error: Failed to authenticate");
+                    messageArea.addClass("alert alert-danger").text("Error: Failed to authenticate").show();
                 }
             });
         });
@@ -492,7 +490,49 @@
      */
     function DisplayRegisterPage(){
         console.log("Display Register Page")
+
+        $("<div id='messageArea'></div>").insertAfter($("#heading")).hide();
+
         RegisterFormValidation();
+
+        $("#registerBtn").on("click", function(event){
+            event.preventDefault();
+            let success = false;
+            let newUser = new core.User();
+
+            $.get("./data/user.json", function(data){
+
+                for(const u of data.users){
+                    if(email.value === u.EmailAddress){
+                        $("#messageArea").addClass("alert alert-danger").text("Error: Email address already in use").show();
+                        break;
+                    }
+                    if(username.value === u.Username){
+                        $("#messageArea").addClass("alert alert-danger").text("Error: User already exists").show();
+                        break;
+                    }
+                    else{
+                        if(password.value === confirmPassword.value){
+                            success = true;
+                            break;
+                        }
+                        else{
+                            $("#messageArea").addClass("alert alert-danger").text("Error: Passwords must match").show();
+                        }
+                    }
+                }
+                if(success){
+                    newUser.FirstName = $("#firstName").val();
+                    newUser.LastName = $("#lastName").val();
+                    newUser.EmailAddress = $("#email").val();
+                    newUser.Username = $("#username").val();
+                    newUser.Password = $("#password").val();
+                    data.users.push(newUser.toJSON());
+                    $("#messageArea").removeAttr("class").hide();
+                    location.href = "login.html";
+                }
+            });
+        });
     }
 
     //
@@ -559,14 +599,10 @@
             /^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]{2,10}$/,
             "Please enter a valid email address (ex. example@email.com");
         // Enter password validation
-        new CheckPassword("#password",
+        ValidateField("#password",
             /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{6,}$/,
             "Please enter a valid password. Must have a minimum of 6 characters, " +
             "1 letter, and one special character. (ex. ");
-        // Confirm password validation
-        new CheckPassword("#confirmPassword",
-            /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{6,}$/,
-            "Password does not match. Please try again.");
     }
 
     function ValidateField(inputFieldID, regularExpression, errorMessage){

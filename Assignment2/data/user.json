@@ -1,7 +1,5 @@
 {
-
   "users" : [
-
     {
       "FirstName" : "Bilbo",
       "LastName" : "Baggins",
@@ -37,7 +35,5 @@
       "Username" : "thompsor",
       "Password" : "password"
     }
-
   ]
-
 }
