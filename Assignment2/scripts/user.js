@@ -5,16 +5,22 @@
     class User {
 
         // Constructors
-        constructor(displayName = "", username = "", emailAddress = "", password = "") {
-            this.DisplayName = displayName;
+        constructor(firstName = "", lastName = "", username = "",
+                    emailAddress = "", password = "") {
+            this.FirstName = firstName;
+            this.LastName = lastName;
             this.Username = username;
             this.EmailAddress = emailAddress;
             this.Password = password;
         }
 
         // Setters
-        set DisplayName(displayName) {
-            this.m_displayname = displayName;
+        set FirstName(firstName) {
+            this.m_firstname = firstName;
+        }
+
+        set LastName(lastName) {
+            this.m_lastname = lastName;
         }
 
         set EmailAddress(emailAddress) {
@@ -30,8 +36,12 @@
         }
 
         // Getters
-        get DisplayName() {
-            return this.m_displayname;
+        get FirstName() {
+            return this.m_firstname;
+        }
+
+        get LastName() {
+            return this.m_lastname;
         }
 
         get EmailAddress() {
@@ -48,14 +58,16 @@
 
         // Methods
         toString() {
-            return `Display Name: ${this.DisplayName}\n 
+            return `First Name: ${this.FirstName}\n 
+                Last Name: ${this.LastName}\n
                 Email Address: ${this.EmailAddress}\n
                 Username: ${this.Username}`;
         }
 
         toJSON(){
             return {
-                "DisplayName" : this.DisplayName,
+                "FirstName" : this.FirstName,
+                "LastName" : this.LastName,
                 "EmailAddress" : this.EmailAddress,
                 "Username" : this.Username,
                 "Password" : this.Password
@@ -63,16 +75,17 @@
         }
 
         fromJSON(data){
-            this.DisplayName = data.DisplayName;
+            this.FirstName = data.FirstName;
+            this.LastName = data.LastName;
             this.EmailAddress = data.EmailAddress;
             this.Username = data.Username;
             this.Password = data.Password;
         }
 
         serialize() {
-            if (this.DisplayName !== "" && this.EmailAddress !== ""
+            if (this.FirstName !== "" && this.LastName !== "" && this.EmailAddress !== ""
                 && this.Username !== "" && this.Password !== "") {
-                return `${this.DisplayName},${this.EmailAddress},${this.Username},${this.Password}`;
+                return `${this.FirstName},${this.LastName},${this.EmailAddress},${this.Username},${this.Password}`;
             }
             console.error("One of more of the contact attributes is/are empty or missing");
             return null;
@@ -80,10 +93,11 @@
 
         deserialize(data) {
             let propertyArray = data.split(",");
-            this.DisplayName = propertyArray[0];
-            this.EmailAddress = propertyArray[1];
-            this.Username = propertyArray[2];
-            this.Password = propertyArray[3];
+            this.FirstName = propertyArray[0];
+            this.LastName = propertyArray[1];
+            this.EmailAddress = propertyArray[2];
+            this.Username = propertyArray[3];
+            this.Password = propertyArray[4];
         }
     }
     core.User = User;
