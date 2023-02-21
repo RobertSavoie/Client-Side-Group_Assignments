@@ -19,12 +19,15 @@
      */
     function Start() {
         console.log("App Started!")
+
+        AjaxRequest("GET", "header.html", LoadHeader);
+
         switch(document.title)
         {
             case "Home":
                 DisplayHomePage();
                 break;
-            case "Our Products":
+            case "Our Projects":
                 DisplayProjectsPage();
                 break;
             case "Our Services":
@@ -39,44 +42,38 @@
             case "Contact Us":
                 DisplayContactUsPage();
                 break;
+            case "Contact List":
+                DisplayContactListPage();
+                break;
+            case "Edit Contact":
+                DisplayEditContactPage();
+                break;
+            case "Login":
+                DisplayLoginPage();
+                break;
+            case "Register":
+                DisplayRegisterPage();
+                break;
         }
     }
     window.addEventListener("load", Start)
+
+    // Display Pages
 
     /** @DisplayHomePage
      * This function displays the home page when user clicks the home button.
      */
     function DisplayHomePage() {
+        console.log("Home Page");
 
-        DisplayNavbar();
-        let a = document.getElementsByTagName("a")[1];
-        a.setAttribute("class", "nav-link active")
-        a.setAttribute("aria-current", "page")
-
-        let ProjectsButton = document.getElementById("ProjectsBtn");
-        ProjectsButton.addEventListener("click", function (){
-            location.href = "projects.html";
-        });
-        let ServicesButton = document.getElementById("ServicesBtn");
-        ServicesButton.addEventListener("click", function (){
-            location.href = "services.html";
-        });
-        let AboutUsButton = document.getElementById("AboutUsBtn");
-        AboutUsButton.addEventListener("click", function(){
-            location.href = "about.html";
-        });
-        let HRButton = document.getElementById("HRBtn");
-        HRButton.addEventListener("click", function(){
-            location.href = "human-resources.html";
-        });
-        let ContactUsButton = document.getElementById("ContactBtn");
-        ContactUsButton.addEventListener("click", function(){
-            location.href = "contact.html";
-        });
+        $("#ProjectsBtn").on("click", function(){location.href = "projects.html";});
+        $("#ServicesBtn").on("click", function(){location.href = "services.html";});
+        $("#AboutUsBtn").on("click", function(){location.href = "about.html";});
+        $("#HRBtn").on("click", function(){location.href = "human-resources.html";});
+        $("#ContactBtn").on("click", function(){location.href = "contact.html";});
 
         // Mains
         let Main1 = document.getElementsByTagName("main")[0];
-        let Main2 = document.getElementsByTagName("main")[1];
         // Headers
         let Header1 = document.createElement("h1")
         // Paragraphs
@@ -90,7 +87,7 @@
         // Welcome paragraph
         Paragraph1.setAttribute("class", "mt-3")
         Paragraph1.textContent = "Welcome to Rob and Rhys' website!"
-        Main2.appendChild(Paragraph1);
+        Main1.appendChild(Paragraph1);
 
         /** @DisplayFooterNave
          * This function displays the footer nav bar which contains the current date and partner names.
@@ -103,19 +100,8 @@
      */
     function DisplayProjectsPage() {
 
-        DisplayNavbar();
-        let a = document.getElementsByTagName("a")[2];
-        a.setAttribute("class", "nav-link active")
-        a.setAttribute("aria-current", "page")
-
-        let HomeButton = document.getElementById("HomeBtn");
-        HomeButton.addEventListener("click", function (){
-            location.href = "index.html";
-        });
-
         // Mains This generates the main tag in JavaScript
         let Main1 = document.getElementsByTagName("main")[0];
-        let Main2 = document.getElementsByTagName("main")[1];
         // Headers This generates the h1 and h2 tag in JavaScript
         let Header1 = document.createElement("h1")
         let Header2 = document.createElement("h1")
@@ -143,7 +129,7 @@
 
         // Rob's Projects. This line displays information about rob on the projects page.
         Main1.appendChild(Header1);
-        Main2.appendChild(Paragraph1);
+        Main1.appendChild(Paragraph1);
         Header1.setAttribute("class", "mb-3")
         Header1.textContent = "Rob and Rhys' Projects"
         Header2.setAttribute("class", "robh1")
@@ -213,19 +199,8 @@
      */
     function DisplayServicesPage() {
 
-        DisplayNavbar();
-        let a = document.getElementsByTagName("a")[3];
-        a.setAttribute("class", "nav-link active")
-        a.setAttribute("aria-current", "page")
-
-        let HomeButton = document.getElementById("HomeBtn");
-        HomeButton.addEventListener("click", function (){
-            location.href = "index.html";
-        });
-
         // Mains
         let Main1 = document.getElementsByTagName("main")[0];
-        let Main2 = document.getElementsByTagName("main")[1];
         // Headers
         let Header1 = document.createElement("h1")
         let Header2 = document.createElement("h1")
@@ -248,12 +223,12 @@
         RobList3.textContent = "COBOL"
         Header2.setAttribute("class", "robh1")
         Header2.textContent = "Rob's Skills:"
-        Main2.appendChild(Header2);
+        Main1.appendChild(Header2);
         Paragraph1.setAttribute("class", "mt-3")
         Paragraph1.appendChild(RobList1)
         Paragraph1.appendChild(RobList2)
         Paragraph1.appendChild(RobList3)
-        Main2.appendChild(Paragraph1);
+        Main1.appendChild(Paragraph1);
 
         // Rhys services
         let RhysList1 = document.createElement("li")
@@ -264,12 +239,12 @@
         RhysList3.textContent = "Python"
         Header3.setAttribute("class", "rhysh1")
         Header3.textContent = "Rhys' Skills:"
-        Main2.appendChild(Header3);
+        Main1.appendChild(Header3);
         Paragraph2.setAttribute("class", "mt-3")
         Paragraph2.appendChild(RhysList1)
         Paragraph2.appendChild(RhysList2)
         Paragraph2.appendChild(RhysList3)
-        Main2.appendChild(Paragraph2);
+        Main1.appendChild(Paragraph2);
 
         DisplayFooterNav();
     }
@@ -279,19 +254,8 @@
      */
     function DisplayAboutUsPage() {
 
-        DisplayNavbar();
-        let a = document.getElementsByTagName("a")[4];
-        a.setAttribute("class", "nav-link active")
-        a.setAttribute("aria-current", "page")
-
-        let HomeButton = document.getElementById("HomeBtn");
-        HomeButton.addEventListener("click", function (){
-            location.href = "index.html";
-        });
-
         // Mains
         let Main1 = document.getElementsByTagName("main")[0];
-        let Main2 = document.getElementsByTagName("main")[1];
         // Headers
         let Header1 = document.createElement("h1")
         let Header2 = document.createElement("h1")
@@ -316,9 +280,9 @@
         // Rob's Paragraph. This describes information about Ron which includes an image of him.
         Header1.setAttribute("class", "robh1")
         Header1.textContent = "Rob Savoie"
-        Main2.appendChild(Header1)
-        Main2.appendChild(Paragraph1);
-        Main2.appendChild(Hr1);
+        Main1.appendChild(Header1)
+        Main1.appendChild(Paragraph1);
+        Main1.appendChild(Hr1);
         Paragraph1.appendChild(Paragraph2);
         Paragraph2.setAttribute("class", "mt-3")
         Paragraph2.textContent = "Rob is a 2nd Year Student at Durham College currently enrolled in the Computer Programing Analysis program which is a 3 year course."
@@ -331,8 +295,8 @@
         // Rhys' Paragraph. This section describes the information about Rhys and includes an image of him.
         Header2.setAttribute("class", "rhysh1")
         Header2.textContent = "Rhys Thompson"
-        Main2.appendChild(Header2)
-        Main2.appendChild(Paragraph3);
+        Main1.appendChild(Header2)
+        Main1.appendChild(Paragraph3);
         Paragraph3.setAttribute("class", "mt-3")
         Paragraph3.textContent = "Rhys is a 2nd Year Student at Durham College currently enrolled in " +
             "the Computer Programing Course which is a 2 year course. Rhys Plans to graduate this semester!"
@@ -349,15 +313,6 @@
      * This function displays the Human Resources page on our website.
      */
     function DisplayHRPage() {
-        DisplayNavbar();
-        let a = document.getElementsByTagName("a")[5];
-        a.setAttribute("class", "nav-link active")
-        a.setAttribute("aria-current", "page")
-
-        let HomeButton = document.getElementById("HomeBtn");
-        HomeButton.addEventListener("click", function(){
-            console.log("test");
-        });
 
         let SubmitButton = document.getElementById("SubmitBtn");
         SubmitButton.addEventListener("click", function(){
@@ -390,21 +345,26 @@
      * This function displays the Contact Us page on our website.
      */
     function DisplayContactUsPage() {
-        DisplayNavbar();
-        let a = document.getElementsByTagName("a")[6];
-        a.setAttribute("class", "nav-link active")
-        a.setAttribute("aria-current", "page")
+        console.log("About Us Page");
 
-        let HomeButton = document.getElementById("HomeBtn");
-        HomeButton.addEventListener("click", function (){
-            location.href = "index.html";
+        ContactFormValidation();
+
+        let subscribeCheckbox = document.getElementById("subscriptionCheckbox");
+        $("#SendBtn").on("click", function(event){
+            event.preventDefault();
+            if(subscribeCheckbox.checked){
+                console.log("Checkbox checked!")
+                AddContact(document.getElementById("fullName").value,
+                    document.getElementById("contactNumber").value,
+                    document.getElementById("email").value,
+                    document.getElementById("message").value);
+                location.href = "contact-list.html";
+            }
         });
 
         // (main) This generates the main tag
         let Main1 = document.getElementsByTagName("main")[0];
-        let Main2 = document.getElementsByTagName("main")[1];
         // (h) This generates the header tag
-        let Header1 = document.createElement("h1")
         let Header2 = document.createElement("h5")
         let Header3 = document.createElement("h5")
         // (hr) This generates the break line tag
@@ -413,151 +373,235 @@
         let Paragraph1 = document.createElement("p")
         let Paragraph2 = document.createElement("p")
 
-        Header1.setAttribute("class", "mb-3")
-        Header1.textContent = "Contact Us"
-        Main1.appendChild(Header1);
-
         Header2.setAttribute("class", "mb-3")
         Header2.textContent = "Rob Savoie"
-        Main2.appendChild(Header2);
+        Main1.appendChild(Header2);
         Paragraph1.textContent = "Email Address: robert.savoie1@dcmail.ca"
-        Main2.appendChild(Paragraph1);
+        Main1.appendChild(Paragraph1);
 
-        Main2.appendChild(Hr1);
+        Main1.appendChild(Hr1);
 
         Header3.setAttribute("class", "mb-3")
         Header3.textContent = "Rhys Thompson"
-        Main2.appendChild(Header3);
+        Main1.appendChild(Header3);
         Paragraph2.textContent = "Email Address: rhys.thompson@dcmail.ca"
-        Main2.appendChild(Paragraph2);
+        Main1.appendChild(Paragraph2);
 
         DisplayFooterNav();
     }
 
-    /** @DisplayNavbar
-     * This function displays the top navbar on our website.
-     */
-    function DisplayNavbar(){
-        // (Header) This generates the header tag
-        let Header = document.getElementsByTagName("header")[0];
-        // Nav
-        let Nav = document.createElement("nav")
-        // (div) This generates the div tag
-        let Div1 = document.createElement("div")
-        let Div2 = document.createElement("div")
-        let Div3 = document.createElement("div")
-        // (a) This generates the "a" tag
-        let A1 = document.createElement("a")
-        let A2 = document.createElement("a")
-        let A3 = document.createElement("a")
-        let A4 = document.createElement("a")
-        let A5 = document.createElement("a")
-        let A6 = document.createElement("a")
-        let A7 = document.createElement("a")
-        // (i) This generates the i tag
-        let I1 = document.createElement("i")
-        let I2 = document.createElement("i")
-        let I3 = document.createElement("i")
-        let I4 = document.createElement("i")
-        let I5 = document.createElement("i")
-        let I6 = document.createElement("i")
-        let I7 = document.createElement("i")
-        // Button This generates the button tag
-        let Button1 = document.createElement("button")
-        // Span. This generates the span tag
-        let Span1 = document.createElement("span")
-        let Span2 = document.createElement("span")
-        let Span3 = document.createElement("span")
-        let Span4 = document.createElement("span")
-        let Span5 = document.createElement("span")
-        let Span6 = document.createElement("span")
-        let Span7 = document.createElement("span")
-        let Span8 = document.createElement("span")
+    function DisplayContactListPage(){
+        console.log("Contact List Page")
 
-        // Navbar
-        Nav.setAttribute("class", "navbar navbar-expand-lg")
-        Header.appendChild(Nav);
+        if(localStorage.length > 0){
+            let contactList = document.getElementById("contactList");
+            let data = "";
+            // Add deserialized data from localStorage
+            let keys = Object.keys(localStorage);
+            // return a string array of keys
+            let index = 1;
+            for(const key of keys){
+                let contactData = localStorage.getItem(key);
+                let contact = new core.Contact();
+                contact.deserialize(contactData);
+                data += `<tr><th scope="row" class="text-center">${index}</th>
+                         <td>${contact.FullName}</td>
+                         <td>${contact.ContactNumber}</td>
+                         <td>${contact.EmailAddress}</td>
+                         <td>${contact.Message}</td>                         
+                         <td class="text-center">
+                            <button value="${key}" class="btn btn-primary btn-sm edit">
+                            <i class="fa-solid fa-edit fa-sm"></i> Edit
+                            </button>
+                         </td>
+                         <td>
+                            <button value="${key}" class="btn btn-danger btn-sm delete">
+                            <i class="fa-regular fa-trash-alt fa-sm"></i> Delete
+                            </button>
+                         </td>
+                         </tr>`;
+                index++;
+            }
+            contactList.innerHTML = data;
+            $("#AddBtn").on("click", () => {location.href = "edit.html#add";});
+            $("button.delete").on("click", function () {
+                if(confirm("Are you sure you want to delete this contact?")){
+                    localStorage.removeItem($(this).val());
+                    location.href = "contact-list.html";
+                }
+            });
+            $("button.edit").on("click", function () {
+                location.href = "edit.html#" + $(this).val();
 
-        // Main Div
-        Div1.setAttribute("class", "container-fluid")
-        Nav.appendChild(Div1);
-        // Main Link
-        A1.setAttribute("class", "navbar-brand")
-        A1.setAttribute("href", "index.html")
-        I1.setAttribute("class", "fa-solid fa-hippo")
-        A1.appendChild(I1);
-        Span2.textContent = " WEBD6201"
-        A1.appendChild(Span2);
-        Div1.appendChild(A1);
+            });
+        }
+    }
 
-        // Collapse Button
-        Button1.setAttribute("class", "navbar-toggler")
-        Button1.setAttribute("type", "button")
-        Button1.setAttribute("data-bs-toggle", "collapse")
-        Button1.setAttribute("data-bs-target", "#navbarNavAltMarkup")
-        Button1.setAttribute("aria-controls", "navbarNavAltMarkup")
-        Button1.setAttribute("aria-expanded", "false")
-        Button1.setAttribute("aria-label", "Toggle navigation")
-        Div1.appendChild(Button1);
-        // Span under button
-        Span1.setAttribute("class", "navbar-toggler-icon")
-        Button1.appendChild(Span1);
+    function DisplayEditContactPage(){
+        console.log("Edit Contact Page")
 
-        // Div 2
-        Div2.setAttribute("class", "collapse navbar-collapse")
-        Div2.setAttribute("id", "navbarNavAltMarkup")
-        Div1.appendChild(Div2);
-        // Div 3
-        Div3.setAttribute("class", "navbar-nav ms-auto mb-2 mb-lg-0")
-        Div2.appendChild(Div3);
-        // Link 1
-        A2.setAttribute("class", "nav-link")
-        A2.setAttribute("href", "index.html")
-        I2.setAttribute("class", "fa-solid fa-house")
-        A2.appendChild(I2);
-        Span3.textContent = " Home"
-        A2.appendChild(Span3);
-        Div3.appendChild(A2);
-        // Link 2
-        A3.setAttribute("class", "nav-link")
-        A3.setAttribute("href", "projects.html")
-        I3.setAttribute("class", "fa-solid fa-inbox")
-        A3.appendChild(I3);
-        Span4.textContent = " Projects";
-        A3.appendChild(Span4);
-        Div3.appendChild(A3);
-        // Link 3
-        A4.setAttribute("class", "nav-link")
-        A4.setAttribute("href", "services.html")
-        I4.setAttribute("class", "fa-solid fa-server")
-        A4.appendChild(I4);
-        Span5.textContent = " Services";
-        A4.appendChild(Span5);
-        Div3.appendChild(A4);
-        // Link 4
-        A5.setAttribute("class", "nav-link")
-        A5.setAttribute("href", "about.html")
-        I5.setAttribute("class", "fa-solid fa-people-group")
-        A5.appendChild(I5);
-        Span6.textContent = " About Us";
-        A5.appendChild(Span6);
-        Div3.appendChild(A5);
-        // Link 5
-        A6.setAttribute("class", "nav-link")
-        A6.setAttribute("href", "human-resources.html")
-        I6.setAttribute("class", "fa-solid fa-building-user")
-        A6.appendChild(I6);
-        Span7.textContent = " Human Resources";
-        A6.appendChild(Span7);
-        Div3.appendChild(A6);
-        // Link 6
-        A7.setAttribute("class", "nav-link")
-        A7.setAttribute("href", "contact.html")
-        I7.setAttribute("class", "fa-solid fa-envelope")
-        A7.appendChild(I7);
-        Span8.textContent = " Contact Us";
-        A7.appendChild(Span8);
-        Div3.appendChild(A7);
+        ContactFormValidation();
+
+        let page = location.hash.substring(1);
+
+        switch(page){
+            case "add":
+                $("main>h1").text("Add Contact");
+                $("#EditBtn").html(`<i class="fas fa-plus fa-sm"></i> Add`);
+
+                $("#EditBtn").on("click", (event) => {
+                    event.preventDefault();
+                    AddContact(document.getElementById("fullName").value,
+                        document.getElementById("contactNumber").value,
+                        document.getElementById("email").value,
+                        document.getElementById("message").value);
+                    location.href = "contact-list.html";
+                });
+
+                $("#CancelBtn").on("click", () => {location.href = "contact-list.html";});
+                break;
+            default:{
+                let contact = new core.Contact();
+                contact.deserialize(localStorage.getItem(page));
+                $("#fullName").val(contact.FullName);
+                $("#contactNumber").val(contact.ContactNumber);
+                $("#email").val(contact.EmailAddress);
+                $("#message").val(contact.Message);
+                $("#EditBtn").on("click", (event) => {
+                    event.preventDefault();
+
+                    contact.FullName = $("#fullName").val();
+                    contact.ContactNumber = $("#contactNumber").val();
+                    contact.EmailAddress = $("#email").val();
+                    contact.Message = $("#message").val();
+
+                    localStorage.setItem(page, contact.serialize());
+
+                    location.href = "contact-list.html";
+                });
+                $("#CancelBtn").on("click", () => {location.href = "contact-list.html";});
+                break;
+            }
+        }
+    }
+
+    function DisplayLoginPage(){
+        console.log("Display Login Page")
+
+        let messageArea = $("#messageArea");
+        messageArea.hide();
+        $("#loginBtn").on("click", function(){
+
+            let success = false;
+            let newUser = new core.User();
+
+            $.get("./data/user.json", function(data){
+
+                for(const u of data.users){
+                    if(userName.value === u.Username && password.value === u.Password){
+                        success = true;
+                        newUser.fromJSON(u);
+                        break;
+                    }
+                }
+
+                if(success){
+                    sessionStorage.setItem("user", newUser.serialize());
+                    messageArea.removeAttr("class").hide();
+                    location.href = "contact.html";
+                }
+                else{
+                    $("#userName").trigger("focus").trigger("select");
+                    messageArea.addClass("alert alert-danger").text("Error: Failed to authenticate");
+                }
+            });
+        });
+        $("#cancelBtn").on("click", function(){
+            document.forms[0].reset();
+            location.href = "index.html";
+        })
+    }
+
+    function DisplayRegisterPage(){
+        console.log("Display Register Page")
+    }
+
+    // Functions
+
+    function AddContact(fullName, contactNumber, emailAddress, message){
+        let contact = new core.Contact(fullName, contactNumber, emailAddress, message);
+        if(contact.serialize()){
+            let key = contact.FullName.substring(0,1) + Date.now();
+            localStorage.setItem(key, contact.serialize());
+        }
+    }
+
+    function CheckLogin(){
+        if(sessionStorage.getItem("user")){
+            $("#login").html(`<a id="logout" class="nav-link" href="#">
+                            <i class="fa-solid fa-sign-out-alt"></i> Logout</a>`);
+        }
+        $("#logout").on("click", function(){
+            sessionStorage.clear();
+            location.href = "index.html";
+        })
+    }
+
+    function ContactFormValidation(){
+        // Validate full name
+        ValidateField("#fullName",
+            /^([A-Z][a-z]{1,3}\.?\s)?([A-Z][a-z]+)+([\s,-]([A-Z][a-z]+))*$/,
+            "Please enter a valid first and last name (ex. Mr. Peter Parker)");
+        // Validate Phone Number
+        ValidateField("#contactNumber",
+            /^(\+\d{1,3}[\s-.])?\(?\d{3}\)?[\s-.]?\d{3}[\s-.]\d{4}$/,
+            "Please enter a valid phone number (ex. 555 555-5555");
+        // Validate Email Address
+        ValidateField("#email",
+            /^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]{2,10}$/,
+            "Please enter a valid email address (ex. example@email.com");
+    }
+
+    function ValidateField(inputFieldID, regularExpression, errorMessage){
+        let messageArea = $("#messageArea");
+
+        $(inputFieldID).on("blur", function(){
+
+            let inputFieldText = $(this).val();
+            if(!regularExpression.test(inputFieldText)){
+                // fail validation
+                $(this).trigger("focus").trigger("select"); // go back to the fullName text
+                messageArea.addClass("alert alert-danger").text(errorMessage).show();
+            }else{
+                //pass validation
+                messageArea.removeAttr("class").hide();
+            }
+        });
+    }
+
+    function AjaxRequest(method, url, callback){
+        // Step 1
+        let xhr = new XMLHttpRequest();
+        // Step 2
+        xhr.addEventListener("readystatechange", ()=>{
+            if(xhr.readyState === 4 && xhr.status === 200){
+                if(typeof callback === "function"){
+                    callback(xhr.responseText);
+                }else{
+                    console.error("Error: Please provide a valid function for callback")
+                }
+            }
+        });
+        // Step 3
+        xhr.open(method, url);
+        // Step 4
+        xhr.send()
+    }
+
+    function LoadHeader(data){
+        $("*header").append(data);
+        $(`li>a:contains(${document.title})`).addClass("active");
+        CheckLogin();
     }
 
     /** @DisplayFooterNav

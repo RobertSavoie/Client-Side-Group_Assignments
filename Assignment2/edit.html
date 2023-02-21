@@ -6,20 +6,19 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    <title>Contact Us</title>
-    <link rel="icon" href ="./images/hippo-solid.svg" type="image/x-icon">
+    <title>Edit Contact</title>
 
     <!-- CSS Section -->
     <link rel="stylesheet" href="./content/app.css">
     <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="./node_modules/@fortawesome/fontawesome-free/css/all.css">
 </head>
-<body class="background" style="background-image: url(./images/background.png);">
+<body>
 
 <header></header>
 
 <main class="container">
-    <h1 class="mb-3">Contact Us</h1>
+    <h1 class="mb-3">Edit Contact</h1>
 
     <div id="messageArea"></div>
 
@@ -45,22 +44,12 @@
                 <textarea type="txt" class="form-control" id="message" name="message" aria-describedby="Input Message"
                           aria-label="Message Area" required></textarea>
             </div>
-            <div class="mb-3 form-check">
-                <input type="checkbox" class="form-check-input" id="subscriptionCheckbox">
-                <label class="form-check-label" for="subscriptionCheckbox">Subscribe to our contact list</label>
-            </div>
             <div class="row justify-content-lg-center g-3 mb-1">
-                <button id="SendBtn" type="submit" class="btn btn-primary col-auto">
-                    <i class="fa-solid fa-envelope"></i> Send</button>
+                <button id="EditBtn" type="submit" class="btn btn-primary col-auto">
+                            <i class="fa-solid fa-pen-to-square"></i> Edit</button>
                 <span class="col-auto"></span>
                 <button id="CancelBtn" type="reset" class="btn btn-warning col-auto">
-                    <i class="fa-solid fa-undo"></i> Cancel</button>
-            </div>
-            <div class="row justify-content-lg-center g-3">
-                <div class="col-auto">
-                    <a href="contact-list.html" class="btn btn-primary">
-                        <i class="fas fa-users fa-lg"></i> Show Contact List</a>
-                </div>
+                            <i class="fa-solid fa-undo"></i> Cancel</button>
             </div>
         </form>
     </div>
@@ -72,8 +61,6 @@
 <script src="./scripts/namespace.js"></script>
 <script src="./scripts/contact.js"></script>
 <script src="./scripts/app.js"></script>
-
-<footer></footer>
 
 </body>
 </html>
