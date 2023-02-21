@@ -72,7 +72,7 @@
         serialize() {
             if (this.DisplayName !== "" && this.EmailAddress !== ""
                 && this.Username !== "" && this.Password !== "") {
-                return `${this.DisplayName},${this.Username},${this.EmailAddress},${this.Password}`;
+                return `${this.DisplayName},${this.EmailAddress},${this.Username},${this.Password}`;
             }
             console.error("One of more of the contact attributes is/are empty or missing");
             return null;

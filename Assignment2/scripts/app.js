@@ -511,6 +511,16 @@
         if(sessionStorage.getItem("user")){
             $("#login").html(`<a id="logout" class="nav-link" href="#">
                             <i class="fa-solid fa-sign-out-alt"></i> Logout</a>`);
+
+            $("<li class='nav-item'>" +
+                "<a id='user' class='nav-link' href='#'></a>" +
+                "</li>").insertAfter($("#contactli"));
+
+            let user = new core.User();
+            let userData = sessionStorage.getItem("user");
+            user.deserialize(userData);
+
+            $("#user").text(user.Username);
         }
         $("#logout").on("click", function(){
             sessionStorage.clear();
