@@ -620,7 +620,6 @@
                 //pass validation
                 messageArea.removeAttr("class").hide();
             }
-
         });
     }
 
@@ -637,7 +636,6 @@
                 messageArea.addClass("alert alert-danger").text(errorMessage).show();
             }
         }
-
         $(inputFieldID).on("blur", function(){
 
             let inputFieldText = $(this).val();
@@ -650,10 +648,8 @@
                 //pass validation
                 messageArea.removeAttr("class").hide();
             }
-
         });
     }
-
 
     function AjaxRequest(method, url, callback){
         // Step 1
@@ -684,12 +680,3 @@
         $("*footer").append(data);
     }
 })();
-
-
-
-
-
-
-
-
-//^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]{2,10}$/
