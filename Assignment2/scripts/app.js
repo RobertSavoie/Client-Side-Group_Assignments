@@ -451,6 +451,8 @@
     function DisplayLoginPage(){
         console.log("Display Login Page")
 
+
+
         let messageArea = $("#messageArea");
         messageArea.hide();
         $("#loginBtn").on("click", function(){
@@ -490,6 +492,7 @@
      */
     function DisplayRegisterPage(){
         console.log("Display Register Page")
+        RegisterFormValidation();
     }
 
     //
@@ -543,6 +546,29 @@
             "Please enter a valid email address (ex. example@email.com");
     }
 
+    function RegisterFormValidation(){
+        ValidateField("#firstName",
+            /^[a-zA-Z]{2,}$/,
+            "Please enter a valid first and last name (ex. Mr. Peter Parker)");
+        // Validate full name
+        ValidateField("#lastName",
+            /^[a-zA-Z]{2,}$/,
+            "Here!");
+        // Validate Phone Number
+        ValidateField("#email",
+            /^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]{2,10}$/,
+            "Please enter a valid email address (ex. example@email.com");
+        // Enter password validation
+        ValidateField("#password",
+            /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{6,}$/,
+            "Please enter a valid password. Must have a minimum of 6 characters, " +
+            "1 letter, and one special character. (ex. ");
+        // Confirm password validation
+        new CheckPassword("#confirmPassword",
+            /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{6,}$/,
+            "Password does not match. Please try again.");
+    }
+
     function ValidateField(inputFieldID, regularExpression, errorMessage){
         let messageArea = $("#messageArea");
 
@@ -553,12 +579,45 @@
                 // fail validation
                 $(this).trigger("focus").trigger("select"); // go back to the fullName text
                 messageArea.addClass("alert alert-danger").text(errorMessage).show();
+
             }else{
                 //pass validation
                 messageArea.removeAttr("class").hide();
             }
+
         });
     }
+
+    function CheckPassword(inputFieldID, regularExpression, errorMessage){
+        let messageArea = $("#messageArea");
+        let password = $("#password");
+        let confirm_password = $("#confirmPassword");
+
+        if (password.length !== 2){
+            if (password === confirm_password){
+                messageArea.removeAttr("class").hide();
+            }else{
+                $(this).trigger("focus").trigger("select"); // go back to the fullName text
+                messageArea.addClass("alert alert-danger").text(errorMessage).show();
+            }
+        }
+
+        $(inputFieldID).on("blur", function(){
+
+            let inputFieldText = $(this).val();
+            if(!regularExpression.test(inputFieldText)){
+                // fail validation
+                $(this).trigger("focus").trigger("select"); // go back to the fullName text
+                messageArea.addClass("alert alert-danger").text(errorMessage).show();
+
+            }else{
+                //pass validation
+                messageArea.removeAttr("class").hide();
+            }
+
+        });
+    }
+
 
     function AjaxRequest(method, url, callback){
         // Step 1
@@ -589,3 +648,12 @@
         $("*footer").append(data);
     }
 })();
+
+
+
+
+
+
+
+
+//^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]{2,10}$/
