@@ -71,33 +71,9 @@
     function DisplayHomePage() {
         console.log("Home Page");
 
-        $("#ProjectsBtn").on("click", function(){location.href = "projects.html";});
-        $("#ServicesBtn").on("click", function(){location.href = "services.html";});
-        $("#AboutUsBtn").on("click", function(){location.href = "about.html";});
-        $("#HRBtn").on("click", function(){location.href = "human-resources.html";});
-        $("#ContactBtn").on("click", function(){location.href = "contact.html";});
-
-        // Mains
-        let Main1 = document.getElementsByTagName("main")[0];
-        // Headers
-        let Header1 = document.createElement("h1")
-        // Paragraphs
-        let Paragraph1 = document.createElement("p")
-
-        // Welcome header
-        Header1.setAttribute("class", "mb-3")
-        Header1.textContent = "Welcome to Our Website!"
-        Main1.appendChild(Header1);
-
-        // Welcome paragraph
-        Paragraph1.setAttribute("class", "mt-3")
-        Paragraph1.textContent = "Welcome to Rob and Rhys' website!"
-        Main1.appendChild(Paragraph1);
-
-        /** @DisplayFooterNave
-         * This function displays the footer nav bar which contains the current date and partner names.
-         */
-        DisplayFooterNav();
+        $("*main").append(document.createElement("h1")).append(document.createElement("p"));
+        $("*h1").addClass("mb-3").text("Welcome To Our Website!");
+        $("*p").addClass("mt-3").text("Welcome to Rob and Rhys' website!");
     }
 
     /** @DisplayProjectsPage
@@ -195,8 +171,6 @@
         Paragraph1.appendChild(Blank2);
         Paragraph1.appendChild(Paragraph5);
         Paragraph5.textContent = "Rhys has worked on installing scaffold at scotia bank arena, designed an app called parkhub and installed windows 7 through a virtual machine."
-
-        DisplayFooterNav();
     }
 
     /** @DisplayServicePage
@@ -250,8 +224,6 @@
         Paragraph2.appendChild(RhysList2)
         Paragraph2.appendChild(RhysList3)
         Main1.appendChild(Paragraph2);
-
-        DisplayFooterNav();
     }
 
     /** @DisplayAboutUsPage
@@ -310,47 +282,23 @@
         Image2.setAttribute("class", "img-rhysabu")
         Image2.setAttribute("src", "images/rhyswithtt.png")
         Paragraph3.appendChild(Image2);
-
-        DisplayFooterNav();
     }
 
     /** @DisplayHRPage
      * This function displays the Human Resources page on our website.
      */
     function DisplayHRPage() {
-
-        let SubmitButton = document.getElementById("SubmitBtn");
-        SubmitButton.addEventListener("click", function(){
-            let Name = document.getElementById("name").value;
-            let Number = document.getElementById("number").value;
-            let Email = document.getElementById("email").value;
-            let Message = document.getElementById("message").value;
-            console.log(Name);
-            console.log(Number);
-            console.log(Email);
-            console.log(Message)
-            /// This sets the 3-second delay which will transfer user back to home page.
-            setTimeout(() => {location.href="index.html"}, 3000);
-        });
-
-        // (main) This generates the main tag
-        let Main1 = document.getElementsByTagName("main")[0];
-        // let Main2 = document.getElementsByTagName("main")[1];
-        // (h) this generates the h tag
-        let Header1 = document.createElement("h1")
-
-        Header1.setAttribute("class", "mb-3")
-        Header1.textContent = "Human Resources"
-        Main1.appendChild(Header1);
-
-        DisplayFooterNav();
+        console.log("Display Human Resources Page");
+        let Header = document.createElement("h1");
+        $("*main").append(Header);
+        $("*h1").addClass("mb-3").text("Human Resources");
     }
 
     /** @DisplayContactUsPage
      * This function displays the Contact Us page on our website.
      */
     function DisplayContactUsPage() {
-        console.log("About Us Page");
+        console.log("Display About Us Page");
 
         ContactFormValidation();
 
@@ -391,8 +339,6 @@
         Main1.appendChild(Header3);
         Paragraph2.textContent = "Email Address: rhys.thompson@dcmail.ca"
         Main1.appendChild(Paragraph2);
-
-        DisplayFooterNav();
     }
 
     /**
@@ -400,7 +346,7 @@
      * This function displays the contact list page.
      */
     function DisplayContactListPage(){
-        console.log("Contact List Page")
+        console.log("Display Contact List Page")
 
         if(localStorage.length > 0){
             let contactList = document.getElementById("contactList");
@@ -451,7 +397,7 @@
      * This function displays the edit contact list page
      */
     function DisplayEditContactPage(){
-        console.log("Edit Contact Page")
+        console.log("Display Edit Contact Page")
 
         ContactFormValidation();
 
@@ -521,7 +467,6 @@
                         break;
                     }
                 }
-
                 if(success){
                     sessionStorage.setItem("user", newUser.serialize());
                     messageArea.removeAttr("class").hide();
