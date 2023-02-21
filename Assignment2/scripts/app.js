@@ -21,6 +21,7 @@
         console.log("App Started!")
 
         AjaxRequest("GET", "header.html", LoadHeader);
+        AjaxRequest("GET", "footer.html", LoadFooter);
 
         switch(document.title)
         {
@@ -58,7 +59,11 @@
     }
     window.addEventListener("load", Start)
 
+    //
+    //
     // Display Pages
+    //
+    //
 
     /** @DisplayHomePage
      * This function displays the home page when user clicks the home button.
@@ -390,6 +395,10 @@
         DisplayFooterNav();
     }
 
+    /**
+     * @DisplayContactListPage
+     * This function displays the contact list page.
+     */
     function DisplayContactListPage(){
         console.log("Contact List Page")
 
@@ -437,6 +446,10 @@
         }
     }
 
+    /**
+     * @DisplayEditContactPage
+     * This function displays the edit contact list page
+     */
     function DisplayEditContactPage(){
         console.log("Edit Contact Page")
 
@@ -485,6 +498,10 @@
         }
     }
 
+    /**
+     * @DisplayLoginPage
+     * This function displays the login page
+     */
     function DisplayLoginPage(){
         console.log("Display Login Page")
 
@@ -522,11 +539,20 @@
         })
     }
 
+    /**
+     * @DisplayRegisterPage
+     * This function displays the register page
+     */
     function DisplayRegisterPage(){
         console.log("Display Register Page")
     }
 
+    //
+    //
     // Functions
+    //
+    //
+
 
     function AddContact(fullName, contactNumber, emailAddress, message){
         let contact = new core.Contact(fullName, contactNumber, emailAddress, message);
@@ -604,33 +630,7 @@
         CheckLogin();
     }
 
-    /** @DisplayFooterNav
-     * This function displays the bottom navbar on our website.
-     */
-    function DisplayFooterNav(){
-        let today = new Date();
-        let dd = String(today.getDate()).padStart(2, '0');
-        let mm = String(today.getMonth() + 1).padStart(2, '0')
-        let yyyy = today.getFullYear();
-
-        today = mm + '/' + dd + '/' + yyyy;
-
-        let Footer = document.getElementsByTagName("footer")[0];
-        let Nav = document.createElement("nav")
-        let Div = document.createElement("div")
-        let Span1 = document.createElement("span")
-        let Span2 = document.createElement("span")
-
-        Nav.setAttribute("class", "navbar fixed-bottom navbar-light")
-        Footer.appendChild(Nav);
-
-        Div.setAttribute("class", "container-fluid")
-        Nav.appendChild(Div);
-
-        Div.appendChild(Span1);
-
-        Span2.setAttribute("class", "robp1")
-        Span2.textContent = "WEBD6201 - Assignment 1 | Rob & Rhys© " + today
-        Div.appendChild(Span2);
+    function LoadFooter(data){
+        $("*footer").append(data);
     }
 })();
