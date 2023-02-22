@@ -261,6 +261,7 @@
         switch(page){
             case "add":
                 $("main>h1").text("Add Contact");
+                // noinspection JSJQueryEfficiency
                 $("#EditBtn").html(`<i class="fas fa-plus fa-sm"></i> Add`).on("click", (event) => {
                     event.preventDefault();
                     AddContact(document.getElementById("fullName").value,
@@ -270,6 +271,7 @@
                     location.href = "contact-list.html";
                 });
 
+                // noinspection JSJQueryEfficiency
                 $("#CancelBtn").on("click", () => {location.href = "contact-list.html";});
                 break;
             default:{
