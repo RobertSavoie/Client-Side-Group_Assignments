@@ -80,208 +80,83 @@
      * This function displays the projects page on our website.
      */
     function DisplayProjectsPage() {
+        console.log("Display Projects Page");
 
-        // Mains This generates the main tag in JavaScript
-        let Main1 = document.getElementsByTagName("main")[0];
-        // Headers This generates the h1 and h2 tag in JavaScript
-        let Header1 = document.createElement("h1")
-        let Header2 = document.createElement("h1")
-        let Header3 = document.createElement("h2")
-        //  This generates the p tag in JavaScript
-        let Paragraph1 = document.createElement("p")
-        let Paragraph2 = document.createElement("p")
-        let Paragraph3 = document.createElement("p")
-        let Paragraph4 = document.createElement("p")
-        let Paragraph5 = document.createElement("p")
-        // Images. This generates the img tag in JavaScript
-        let Image1 = document.createElement("img")
-        let Image2 = document.createElement("img")
-        let Image3 = document.createElement("img")
-        let Image4 = document.createElement("img")
-        let Image5 = document.createElement("img")
-        let Image6 = document.createElement("img")
-        // Blank row. Displays a blank row to create spacing.
-        let Blank1 = document.createElement("br")
-        let Blank2 = document.createElement("br")
-        // Horizontal line. Displays dividing line between the headers, paragraphs and pictures.
-        let Line1 = document.createElement("hr")
-        let Line2 = document.createElement("hr")
-        let Line3 = document.createElement("hr")
-
-        // Rob's Projects. This line displays information about rob on the projects page.
-        Main1.appendChild(Header1);
-        Main1.appendChild(Paragraph1);
-        Header1.setAttribute("class", "mb-3")
-        Header1.textContent = "Rob and Rhys' Projects"
-        Header2.setAttribute("class", "robh1")
-        Header2.textContent = "Rob's Projects"
-        Paragraph1.appendChild(Header2);
-        Paragraph1.appendChild(Line1);
-        Paragraph1.appendChild(Paragraph2);
-        Paragraph2.textContent = "Here are all three of Rob's personal projects he has worked on over the years."
-        // Projects paragraph Rob working with amazon
-        Image1.setAttribute("class", "img-amazon")
-        Image1.setAttribute("src", "images/amazon.png")
-        Paragraph1.appendChild(Image1);
-        Paragraph1.appendChild(Blank1);
-        Paragraph1.appendChild(Blank2);
-        // Projects paragraph Rob working with facebook
-        Image2.setAttribute("class", "img-facebook")
-        Image2.setAttribute("src", "images/Screen_of_Facebook.png")
-        Paragraph1.appendChild(Image2);
-        Paragraph1.appendChild(Blank1);
-        Paragraph1.appendChild(Blank2);
-        // Projects paragraph Rob working with twitter
-        Image3.setAttribute("class", "img-twitter")
-        Image3.setAttribute("src", "images/twitter.png")
-        Paragraph1.appendChild(Image3);
-        Paragraph1.appendChild(Blank1);
-        Paragraph1.appendChild(Blank2);
-        Paragraph1.appendChild(Paragraph3);
-        Paragraph3.textContent = "Rob has worked for Amazon, Facebook, and Twitter working on their login pages."
-        Paragraph1.appendChild(Line2);
-        Paragraph1.appendChild(Header3);
-
-        // Rhys' Projects!!!! This displays a small header for Rhys's projects
-        Header3.setAttribute("class", "rhysh1")
-        Header3.textContent = "Rhys's Projects"
-
-        Paragraph1.appendChild(Header3);
-        Paragraph1.appendChild(Line3);
-        Paragraph1.appendChild(Paragraph4);
-        Paragraph1.appendChild(Image4);
-        Paragraph4.textContent = "Here are all three of Rhys's personal projects he has worked on over the years."
-        //This row of code displays the Scaffold Image.
-        Image4.setAttribute("class", "img-scaffold")
-        Image4.setAttribute("src", "images/scaffold.png")
-        Paragraph1.appendChild(Image4);
-        Paragraph1.appendChild(Blank1);
-        Paragraph1.appendChild(Blank2);
-        // This row of code displays the Parkhub Image
-        Image5.setAttribute("class", "img-parkhub")
-        Image5.setAttribute("src", "images/parkhub.png")
-        Paragraph1.appendChild(Image5);
-        Paragraph1.appendChild(Blank1);
-        Paragraph1.appendChild(Blank2);
-        //This row of code displays the Winodows 7 Image
-        Image6.setAttribute("class", "img-windows7")
-        Image6.setAttribute("src", "images/windows7.png")
-        Paragraph1.appendChild(Image6);
-        Paragraph1.appendChild(Blank1);
-        Paragraph1.appendChild(Blank2);
-        Paragraph1.appendChild(Paragraph5);
-        Paragraph5.textContent = "Rhys has worked on installing scaffold at scotia bank arena, designed an app called parkhub and installed windows 7 through a virtual machine."
+        $("*main")
+            .append(`<h1 class="mb-3">Rob and Rhys' Projects</h1>`)
+            .append(`<p id="para1"></p>`)
+            .append(`<hr/>`);
+        $("#para1")
+            .append(`<h1 class="robh1">Rob's Projects</h1>`)
+            .append(`<hr/>`)
+            .append(`<p>Here are all three of Rob's personal projects he has worked on over the years</p>`)
+            .append(`<img class="img-amazon" src="../images/amazon.png" alt="No Image Found">`)
+            .append(`<img class="img-facebook" src="../images/Screen_of_Facebook.png" alt="No Image Found">`)
+            .append(`<img class="img-twitter" src="../images/twitter.png" alt="No Image Found">`)
+            .append(`<br>`)
+            .append(`<br>`)
+            .append(`<p>Rob has worked for Amazon, Facebook, and Twitter working on their login pages</p>`)
+            .append(`<hr/>`)
+            .append(`<h1 class="rhysh1">Rhys' Projects</h1>`)
+            .append(`<hr/>`)
+            .append(`<p>Here are all three of Rhys' personal projects he has worked on over the years</p>`)
+            .append(`<img class="img-scaffold" src="../images/scaffold.png" alt="No Image Found">`)
+            .append(`<img class="img-parkhub" src="../images/parkhub.png" alt="No Image Found">`)
+            .append(`<img class="img-windows7" src="../images/windows7.png" alt="No Image Found">`)
+            .append(`<br>`)
+            .append(`<br>`)
+            .append(`<p>Rhys has worked on installing scaffold at scotia bank arena, designed an app 
+                        called parkhub and installed windows 7 through a virtual machine.</p>`);
     }
 
     /** @DisplayServicePage
      * This function displays our services page.
      */
     function DisplayServicesPage() {
+        console.log("Display Services Page");
 
-        // Mains
-        let Main1 = document.getElementsByTagName("main")[0];
-        // Headers
-        let Header1 = document.createElement("h1")
-        let Header2 = document.createElement("h1")
-        let Header3 = document.createElement("h1")
-        // Paragraphs
-        let Paragraph1 = document.createElement("p")
-        let Paragraph2 = document.createElement("p")
-
-        // Main Header
-        Header1.setAttribute("class", "mb-3")
-        Header1.textContent = "Services We Provide:"
-        Main1.appendChild(Header1);
-
-        // Rob's services
-        let RobList1 = document.createElement("li")
-        let RobList2 = document.createElement("li")
-        let RobList3 = document.createElement("li")
-        RobList1.textContent = "HTML/PHP/JavaScript"
-        RobList2.textContent = "C#/Visual Studio"
-        RobList3.textContent = "COBOL"
-        Header2.setAttribute("class", "robh1")
-        Header2.textContent = "Rob's Skills:"
-        Main1.appendChild(Header2);
-        Paragraph1.setAttribute("class", "mt-3")
-        Paragraph1.appendChild(RobList1)
-        Paragraph1.appendChild(RobList2)
-        Paragraph1.appendChild(RobList3)
-        Main1.appendChild(Paragraph1);
-
-        // Rhys services
-        let RhysList1 = document.createElement("li")
-        let RhysList2 = document.createElement("li")
-        let RhysList3 = document.createElement("li")
-        RhysList1.textContent = "Cloud"
-        RhysList2.textContent = "C#/Visual Studio"
-        RhysList3.textContent = "Python"
-        Header3.setAttribute("class", "rhysh1")
-        Header3.textContent = "Rhys' Skills:"
-        Main1.appendChild(Header3);
-        Paragraph2.setAttribute("class", "mt-3")
-        Paragraph2.appendChild(RhysList1)
-        Paragraph2.appendChild(RhysList2)
-        Paragraph2.appendChild(RhysList3)
-        Main1.appendChild(Paragraph2);
+        $("*main")
+            .append(`<h1 class="mb-3">Services We Provide:</h1>`)
+            .append(`<h1 class="robh1">Rob's Skills</h1>`)
+            .append(`<p>
+                        <li>HTML/PHP/JavaScript</li>
+                        <li>C#/Visual Studio</li>
+                        <li>COBOL</li>
+                     </p>`)
+            .append(`<h1 class="rhysh1">Rhys' Skills:</h1>`)
+            .append(`<p>
+                        <li>Cloud</li>
+                        <li>C#/Visual Studio</li>
+                        <li>Python</li>
+                     </p>`);
     }
 
     /** @DisplayAboutUsPage
      * This function displays the About Us page on our website.
      */
     function DisplayAboutUsPage() {
+        console.log("Display About Us Page");
 
-        // Mains
-        let Main1 = document.getElementsByTagName("main")[0];
-        // Headers
-        let Header1 = document.createElement("h1")
-        let Header2 = document.createElement("h1")
-        let Header3 = document.createElement("h1")
-        // Paragraphs
-        let Paragraph1 = document.createElement("p")
-        let Paragraph2 = document.createElement("p")
-        let Paragraph3 = document.createElement("p")
-        // Break lines
-        let Hr1 = document.createElement("hr")
-        // Images
-        let Image1 = document.createElement("img")
-        let Image2 = document.createElement("img")
-        //Blank
-        let Blank1 = document.createElement("br")
-        let Blank2 = document.createElement("br")
-
-        Header3.setAttribute("class", "mb-3")
-        Header3.textContent = "About Us"
-        Main1.appendChild(Header3);
-
-        // Rob's Paragraph. This describes information about Ron which includes an image of him.
-        Header1.setAttribute("class", "robh1")
-        Header1.textContent = "Rob Savoie"
-        Main1.appendChild(Header1)
-        Main1.appendChild(Paragraph1);
-        Main1.appendChild(Hr1);
-        Paragraph1.appendChild(Paragraph2);
-        Paragraph2.setAttribute("class", "mt-3")
-        Paragraph2.textContent = "Rob is a 2nd Year Student at Durham College currently enrolled in the Computer Programing Analysis program which is a 3 year course."
-        Image1.setAttribute("class", "img-square")
-        Image1.setAttribute("src", "images/Rob.jpg")
-        Paragraph1.appendChild(Image1);
-        Paragraph1.appendChild(Blank1);
-        Paragraph1.appendChild(Blank2);
-
-        // Rhys' Paragraph. This section describes the information about Rhys and includes an image of him.
-        Header2.setAttribute("class", "rhysh1")
-        Header2.textContent = "Rhys Thompson"
-        Main1.appendChild(Header2)
-        Main1.appendChild(Paragraph3);
-        Paragraph3.setAttribute("class", "mt-3")
-        Paragraph3.textContent = "Rhys is a 2nd Year Student at Durham College currently enrolled in " +
-            "the Computer Programing Course which is a 2 year course. Rhys Plans to graduate this semester!"
-        Paragraph3.appendChild(Blank1);
-        Paragraph3.appendChild(Blank2);
-        Image2.setAttribute("class", "img-rhysabu")
-        Image2.setAttribute("src", "images/rhyswithtt.png")
-        Paragraph3.appendChild(Image2);
+        $("*main")
+            .append(`<h1 class="mb-3">About Us</h1>`)
+            .append(`<h1 class="robh1">Rob Savoie</h1>`)
+            .append(`<hr/>`)
+            .append(`<p id="imageSection1">
+                         <p class="mt-3">Rob is a 2nd Year Student at Durham College currently enrolled in the 
+                                         Computer Programing Analysis program which is a 3 year course.
+                         </p>
+                     </p>`)
+            .append(`<h1 class="rhysh1">Rhys Thompson</h1>`)
+            .append(`<hr/>`)
+            .append(`<p id="imageSection2">
+                         <p class="mt-3">Rhys is a 2nd Year Student at Durham College currently enrolled in the 
+                         Computer Programing Course which is a 2 year course. Rhys Plans to graduate this semester!
+                         </p>
+                     </p>`);
+        $("#imageSection1")
+            .append($(`<img class="img-square" src="../images/Rob.jpg" alt="Unable to find Rob image">`));
+        $("#imageSection2")
+            .append($(`<img class="img-square" src="../images/rhyswithtt.png" alt="Unable to find Rhys image">`));
     }
 
     /** @DisplayHRPage
@@ -289,9 +164,7 @@
      */
     function DisplayHRPage() {
         console.log("Display Human Resources Page");
-        let Header = document.createElement("h1");
-        $("*main").append(Header);
-        $("*h1").addClass("mb-3").text("Human Resources");
+        $("*main").append(`<h1 class="mb-3">Human Resources</h1>`);
     }
 
     /** @DisplayContactUsPage
@@ -315,30 +188,12 @@
             }
         });
 
-        // (main) This generates the main tag
-        let Main1 = document.getElementsByTagName("main")[0];
-        // (h) This generates the header tag
-        let Header2 = document.createElement("h5")
-        let Header3 = document.createElement("h5")
-        // (hr) This generates the break line tag
-        let Hr1 = document.createElement("hr")
-        // (p) This generates the break line tag
-        let Paragraph1 = document.createElement("p")
-        let Paragraph2 = document.createElement("p")
-
-        Header2.setAttribute("class", "mb-3")
-        Header2.textContent = "Rob Savoie"
-        Main1.appendChild(Header2);
-        Paragraph1.textContent = "Email Address: robert.savoie1@dcmail.ca"
-        Main1.appendChild(Paragraph1);
-
-        Main1.appendChild(Hr1);
-
-        Header3.setAttribute("class", "mb-3")
-        Header3.textContent = "Rhys Thompson"
-        Main1.appendChild(Header3);
-        Paragraph2.textContent = "Email Address: rhys.thompson@dcmail.ca"
-        Main1.appendChild(Paragraph2);
+        $("*main")
+            .append($(`<h5 class="mb-3">Rob Savoie</h5>`))
+            .append(`<p>Email Address: robert.savoie1@dcmail.ca</p>`)
+            .append($(`<hr/>`))
+            .append(`<h5 class="mb-3">Rhys Thompson</h5>`)
+            .append(`<p>Email Address: rhys.thompson@dcmail.ca</p>`);
     }
 
     /**
@@ -406,9 +261,8 @@
         switch(page){
             case "add":
                 $("main>h1").text("Add Contact");
-                $("#EditBtn").html(`<i class="fas fa-plus fa-sm"></i> Add`);
-
-                $("#EditBtn").on("click", (event) => {
+                // noinspection JSJQueryEfficiency
+                $("#EditBtn").html(`<i class="fas fa-plus fa-sm"></i> Add`).on("click", (event) => {
                     event.preventDefault();
                     AddContact(document.getElementById("fullName").value,
                         document.getElementById("contactNumber").value,
@@ -417,6 +271,7 @@
                     location.href = "contact-list.html";
                 });
 
+                // noinspection JSJQueryEfficiency
                 $("#CancelBtn").on("click", () => {location.href = "contact-list.html";});
                 break;
             default:{
@@ -555,9 +410,9 @@
             $("#login").html(`<a id="logout" class="nav-link" href="#">
                             <i class="fa-solid fa-sign-out-alt"></i> Logout</a>`);
 
-            $("<li class='nav-item'>" +
-                "<a id='user' class='nav-link' href='#'></a>" +
-                "</li>").insertAfter($("#contactli"));
+            $(`<li class='nav-item'>
+                <a id='user' class='nav-link' href='#'></a>
+                </li>`).insertAfter($("#contactli"));
 
             let user = new core.User();
             let userData = sessionStorage.getItem("user");
@@ -589,11 +444,11 @@
     function RegisterFormValidation(){
         ValidateField("#firstName",
             /^[a-zA-Z]{2,}$/,
-            "Please enter a valid first and last name (ex. Mr. Peter Parker)");
+            "Please enter a valid first name (ex. Peter Parker)");
         // Validate full name
         ValidateField("#lastName",
             /^[a-zA-Z]{2,}$/,
-            "Here!");
+            "Please enter a valid last name (ex. Peter Parker)");
         // Validate Phone Number
         ValidateField("#email",
             /^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]{2,10}$/,
