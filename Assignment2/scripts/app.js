@@ -1,3 +1,5 @@
+// noinspection JSJQueryEfficiency
+
 /**
  * Name: Rob Savoie & Rhys Thompson
  * Last Update: 1/25/2023
@@ -261,9 +263,7 @@
         switch(page){
             case "add":
                 $("main>h1").text("Add Contact");
-                $("#EditBtn").html(`<i class="fas fa-plus fa-sm"></i> Add`);
-
-                $("#EditBtn").on("click", (event) => {
+                $("#EditBtn").html(`<i class="fas fa-plus fa-sm"></i> Add`).on("click", (event) => {
                     event.preventDefault();
                     AddContact(document.getElementById("fullName").value,
                         document.getElementById("contactNumber").value,
