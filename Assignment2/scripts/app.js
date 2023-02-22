@@ -396,7 +396,6 @@
     //
     //
 
-
     function AddContact(fullName, contactNumber, emailAddress, message){
         let contact = new core.Contact(fullName, contactNumber, emailAddress, message);
         if(contact.serialize()){
