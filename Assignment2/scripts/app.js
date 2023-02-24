@@ -154,7 +154,7 @@
                          </p>
                      </p>`);
         $("#imageSection1")
-            .append($(`<img class="img-square" src="../images/Rob.jpg" alt="Unable to find Rob image">`));
+            .append($(`<img class="img-square" src="../images/Rob.jpg" alt="Rob.jpg">`));
         $("#imageSection2")
             .append($(`<img class="img-square" src="../images/rhyswithtt.png" alt="Unable to find Rhys image">`));
     }
