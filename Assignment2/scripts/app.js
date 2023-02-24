@@ -451,15 +451,15 @@
     function RegisterFormValidation(){
         ValidateField("#firstName",
             /^[a-zA-Z]{2,}$/,
-            "Please enter a valid first name (ex. Peter Parker)");
+            "First name must be at least 2 characters");
         // Validate full name
         ValidateField("#lastName",
             /^[a-zA-Z]{2,}$/,
-            "Please enter a valid last name (ex. Peter Parker)");
+            "Last name must be at least 2 characters");
         // Validate Phone Number
         ValidateField("#email",
             /^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]{2,10}$/,
-            "Please enter a valid email address (ex. example@email.com");
+            "Email must be at least 8 characters and have an @ symbol");
         ValidateField("#username",
             /^(?=.{6,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$/,
             "Characters must range from 6-20 (ex: johndoe07)");
@@ -467,7 +467,7 @@
         ValidateField("#password",
             /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{6,}$/,
             "Please enter a valid password. Must have a minimum of 6 characters, " +
-            "1 letter, and one special character. (ex. ");
+            "1 letter, and one special character.");
     }
 
     function ValidateField(inputFieldID, regularExpression, errorMessage){
