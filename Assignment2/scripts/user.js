@@ -58,10 +58,12 @@
 
         // Methods
         toString() {
-            return `First Name: ${this.FirstName}\n 
-                Last Name: ${this.LastName}\n
-                Email Address: ${this.EmailAddress}\n
-                Username: ${this.Username}`;
+            let output = `First Name: ${this.FirstName}\n`;
+            output += `Last Name: ${this.LastName}\n`;
+            output += `Email Address: ${this.EmailAddress}\n`;
+            output += `Username: ${this.Username}`;
+
+            return output;
         }
 
         toJSON(){
