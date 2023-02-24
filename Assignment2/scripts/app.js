@@ -398,12 +398,15 @@
         });
     }
 
-    //
-    //
-    // Functions
-    //
-    //
-
+    /**
+     * @param fullName
+     * @param contactNumber
+     * @param emailAddress
+     * @param message
+     * @AddContact
+     * Add contact infor such as fullname, contact number, email address, and
+     * message
+     */
     function AddContact(fullName, contactNumber, emailAddress, message){
         let contact = new core.Contact(fullName, contactNumber, emailAddress, message);
         if(contact.serialize()){
@@ -412,6 +415,10 @@
         }
     }
 
+    /**
+     * @CheckLogin
+     * This function validates user input information.
+     */
     function CheckLogin(){
         if(sessionStorage.getItem("user")){
             $("#loginHeader").html(`<a id="logoutHeader" class="nav-link" href="#">
@@ -433,6 +440,10 @@
         })
     }
 
+    /**
+     * @ContactFormValidation
+     * This function validates the contact page input information.
+     */
     function ContactFormValidation(){
         // Validate full name
         ValidateField("#fullName",
@@ -447,6 +458,11 @@
             /^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]{2,10}$/,
             "Please enter a valid email address (ex. example@email.com");
     }
+
+    /**
+     * @RegisterFormValidation
+     * This function validates the input in register form page.
+     */
 
     function RegisterFormValidation(){
         ValidateField("#firstName",
@@ -470,6 +486,14 @@
             "1 letter, and one special character.");
     }
 
+    /**
+     * @param inputFieldID
+     * @param regularExpression
+     * @param errorMessage
+     * @ValidateField
+     * This validates user info such as input id,
+     * regular expression, error message.
+     */
     function ValidateField(inputFieldID, regularExpression, errorMessage){
         let messageArea = $("#messageArea");
 
@@ -488,6 +512,13 @@
         });
     }
 
+    /**
+     * @param method
+     * @param url
+     * @param callback
+     * @AjaxRequest
+     * Creates an Ajax request
+     */
     function AjaxRequest(method, url, callback){
         // Step 1
         let xhr = new XMLHttpRequest();
@@ -507,6 +538,11 @@
         xhr.send()
     }
 
+    /**
+     * @param data
+     * @LoadHeader
+     * Load header onto pages
+     */
     function LoadHeader(data){
         $("*header").append(data);
         $("#productsHeader").html(`<li class="nav-item"><a class="nav-link" href="../projects.html">
@@ -520,6 +556,11 @@
         CheckLogin();
     }
 
+    /**
+     * @param data
+     * @LoadFooter
+     * Load footer onto pages
+     */
     function LoadFooter(data){
         $("*footer").append(data);
     }
