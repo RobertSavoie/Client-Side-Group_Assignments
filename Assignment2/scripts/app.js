@@ -13,7 +13,7 @@
 
 //IIFE - Immediately Invoked Function Expression
 //AKA  - Anonymous Self-Executing Function
-(function (key, value){
+(function (){
     /** @Start
      * This function loads all the information about the pages from JavaScript to our website.
      */
@@ -28,10 +28,10 @@
             case "Home":
                 DisplayHomePage();
                 break;
-            case "Our Projects":
+            case "Projects":
                 DisplayProjectsPage();
                 break;
-            case "Our Services":
+            case "Services":
                 DisplayServicesPage();
                 break;
             case "About Us":
@@ -106,7 +106,7 @@
             .append(`<br>`)
             .append(`<br>`)
             .append(`<p>Rhys has worked on installing scaffold at scotia bank arena, designed an app 
-                        called parkhub and installed windows 7 through a virtual machine.</p>`);
+                        called parkhub and installed Windows 7 through a virtual machine.</p>`);
     }
 
     /** @DisplayServicePage
@@ -143,14 +143,14 @@
             .append(`<hr/>`)
             .append(`<p id="imageSection1">
                          <p class="mt-3">Rob is a 2nd Year Student at Durham College currently enrolled in the 
-                                         Computer Programing Analysis program which is a 3 year course.
+                                         Computer Programing Analysis program which is a 3-year course.
                          </p>
                      </p>`)
             .append(`<h1 class="rhysh1">Rhys Thompson</h1>`)
             .append(`<hr/>`)
             .append(`<p id="imageSection2">
                          <p class="mt-3">Rhys is a 2nd Year Student at Durham College currently enrolled in the 
-                         Computer Programing Course which is a 2 year course. Rhys Plans to graduate this semester!
+                         Computer Programing Course which is a 2-year course. Rhys Plans to graduate this semester!
                          </p>
                      </p>`);
         $("#imageSection1")
@@ -305,26 +305,21 @@
      */
     function DisplayLoginPage(){
         console.log("Display Login Page")
-        const urlParams = new URLSearchParams(window.location.search);
-        const userName = urlParams.get('username');
-        const password = urlParams.get('password');
-        //$("#userName").value = userName;
 
-        console.log(userName) //pushes username info to login page
-        console.log(password) // pushes password info to login page
-
+        // const urlParams = new URLSearchParams(window.location.search);
+        // const urlUserName = urlParams.get('username');
+        // const urlPassword = urlParams.get('password');
+        //
+        // console.log(urlUserName) //pushes username info to login page
+        // console.log(urlPassword) // pushes password info to login page
 
         let messageArea = $("#messageArea");
         messageArea.hide();
         $("#loginBtn").on("click", function(){
-
-
             let success = false;
             let newUser = new core.User();
 
             $.get("./data/user.json", function(data){
-
-
                 for(const u of data.users){
                     if(userName.value === u.Username && password.value === u.Password){
                         success = true;
@@ -394,12 +389,10 @@
                     newUser.EmailAddress = $("#email").val();
                     newUser.Username = $("#username").val();
                     newUser.Password = $("#password").val();
-                    data.users.push(newUser.toJSON(data));
+                    console.log(newUser.toString());
                     $("#messageArea").removeAttr("class").hide();
-                    location.href = "login.html?username=" + newUser.Username + "&password=" + newUser.Password ;
-
-
-
+                    $("#registerForm").trigger("reset");
+                    // location.href = "login.html?username=" + newUser.Username + "&password=" + newUser.Password;
                 }
             });
         });
@@ -411,7 +404,6 @@
     //
     //
 
-
     function AddContact(fullName, contactNumber, emailAddress, message){
         let contact = new core.Contact(fullName, contactNumber, emailAddress, message);
         if(contact.serialize()){
@@ -422,12 +414,12 @@
 
     function CheckLogin(){
         if(sessionStorage.getItem("user")){
-            $("#login").html(`<a id="logout" class="nav-link" href="#">
+            $("#loginHeader").html(`<a id="logoutHeader" class="nav-link" href="#">
                             <i class="fa-solid fa-sign-out-alt"></i> Logout</a>`);
 
             $(`<li class='nav-item'>
                 <a id='user' class='nav-link' href='#'></a>
-                </li>`).insertAfter($("#contactli"));
+                </li>`).insertAfter($("#contactHeader"));
 
             let user = new core.User();
             let userData = sessionStorage.getItem("user");
@@ -435,7 +427,7 @@
 
             $("#user").text(user.Username);
         }
-        $("#logout").on("click", function(){
+        $("#logoutHeader").on("click", function(){
             sessionStorage.clear();
             location.href = "index.html";
         })
@@ -496,34 +488,6 @@
         });
     }
 
-    function CheckPassword(inputFieldID, regularExpression, errorMessage){
-        let messageArea = $("#messageArea");
-        let password = $("#password");
-        let confirm_password = $("#confirmPassword");
-
-        if (confirm_password !== 0){
-            if (confirm_password === password){
-                messageArea.removeAttr("class").hide();
-            }else{
-                $(this).trigger("focus").trigger("select"); // go back to the fullName text
-                messageArea.addClass("alert alert-danger").text(errorMessage).show();
-            }
-        }
-        $(inputFieldID).on("blur", function(){
-
-            let inputFieldText = $(this).val();
-            if(!regularExpression.test(inputFieldText)){
-                // fail validation
-                $(this).trigger("focus").trigger("select"); // go back to the fullName text
-                messageArea.addClass("alert alert-danger").text(errorMessage).show();
-
-            }else{
-                //pass validation
-                messageArea.removeAttr("class").hide();
-            }
-        });
-    }
-
     function AjaxRequest(method, url, callback){
         // Step 1
         let xhr = new XMLHttpRequest();
@@ -545,6 +509,13 @@
 
     function LoadHeader(data){
         $("*header").append(data);
+        $("#productsHeader").html(`<li class="nav-item"><a class="nav-link" href="../projects.html">
+                                    <i class="fa-solid fa-inbox"></i> Projects</a></li>`);
+        $(`<li class='nav-item'>
+                <a class='nav-link' href='../human-resources.html'>
+                    <i class="fa-solid fa-building-user"></i> Human Resources
+                </a>
+            </li>`).insertAfter($("#aboutHeader"));
         $(`li>a:contains(${document.title})`).addClass("active");
         CheckLogin();
     }
