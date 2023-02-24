@@ -1,7 +1,7 @@
 /**
  * Name: Rob Savoie & Rhys Thompson
- * Last Update: 1/25/2023
- * Current Update: 1/26/2023
+ * Last Update: 2/23/2023
+ * Current Update: 2/24/2023
  * File Name: app.js
  * Description: This is our JavaScript file using a different variety of different functions & tags.
  * In this assignment our group demonstrates the different types of logic used to create a basic webpage
@@ -13,7 +13,7 @@
 
 //IIFE - Immediately Invoked Function Expression
 //AKA  - Anonymous Self-Executing Function
-(function(){
+(function (key, value){
     /** @Start
      * This function loads all the information about the pages from JavaScript to our website.
      */
@@ -305,15 +305,25 @@
      */
     function DisplayLoginPage(){
         console.log("Display Login Page")
+        const urlParams = new URLSearchParams(window.location.search);
+        const userName = urlParams.get('username');
+        const password = urlParams.get('password');
+        //$("#userName").value = userName;
+
+        console.log(userName) //pushes username info to login page
+        console.log(password) // pushes password info to login page
+
 
         let messageArea = $("#messageArea");
         messageArea.hide();
         $("#loginBtn").on("click", function(){
 
+
             let success = false;
             let newUser = new core.User();
 
             $.get("./data/user.json", function(data){
+
 
                 for(const u of data.users){
                     if(userName.value === u.Username && password.value === u.Password){
@@ -335,7 +345,7 @@
         });
         $("#cancelBtn").on("click", function(){
             document.forms[0].reset();
-            location.href = "index.html";
+            location.href = "login.html";
         })
     }
 
@@ -347,11 +357,12 @@
         console.log("Display Register Page")
 
         $("<div id='messageArea'></div>").insertAfter($("#heading")).hide();
-
+        // Register validation function. Checks to make sure all text fields are the correct input
         RegisterFormValidation();
 
         $("#registerBtn").on("click", function(event){
             event.preventDefault();
+
             let success = false;
             let newUser = new core.User();
 
@@ -376,15 +387,19 @@
                         }
                     }
                 }
+                // When all text fields are filled. Register page will direct user to login page.
                 if(success){
                     newUser.FirstName = $("#firstName").val();
                     newUser.LastName = $("#lastName").val();
                     newUser.EmailAddress = $("#email").val();
                     newUser.Username = $("#username").val();
                     newUser.Password = $("#password").val();
-                    data.users.push(newUser.toJSON());
+                    data.users.push(newUser.toJSON(data));
                     $("#messageArea").removeAttr("class").hide();
-                    location.href = "login.html";
+                    location.href = "login.html?username=" + newUser.Username + "&password=" + newUser.Password ;
+
+
+
                 }
             });
         });
