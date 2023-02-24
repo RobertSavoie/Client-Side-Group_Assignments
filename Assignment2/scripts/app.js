@@ -412,6 +412,10 @@
         }
     }
 
+    /**
+     *
+     * @constructor
+     */
     function CheckLogin(){
         if(sessionStorage.getItem("user")){
             $("#loginHeader").html(`<a id="logoutHeader" class="nav-link" href="#">
