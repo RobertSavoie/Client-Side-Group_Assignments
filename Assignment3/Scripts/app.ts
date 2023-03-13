@@ -5,7 +5,8 @@
     function AuthGuard(): void
     {
         let protected_routes: string[] = [
-            "contact-list"
+            "contact-list",
+            "task-list"
         ];
     
     
@@ -390,11 +391,14 @@
         // if user is logged in
         if(sessionStorage.getItem("user"))
         {
+            $("#task-list").html(
+                `<a class="nav-link" data="task-list"><i class="fas fa-envelope"></i> Task List</a>`);
+
             // swap out the login link for logout
             $("#login").html(
                 `<a id="logout" class="nav-link" href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>`
             );
-            
+
             $("#logout").on("click", function()
             {
                 // perform logout
@@ -601,6 +605,7 @@
             case "login": return DisplayLoginPage;
             case "register": return DisplayRegisterPage;
             case "404": return Display404Page;
+            case "task-list": return DisplayTaskList;
             default:
                 console.error("ERROR: callback does not exist: " + router.ActiveLink);
                 return new Function();
