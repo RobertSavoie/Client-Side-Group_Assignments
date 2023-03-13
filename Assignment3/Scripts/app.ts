@@ -392,14 +392,15 @@
         if(sessionStorage.getItem("user"))
         {
             $("#task-list").html(`<a class="nav-link" data="task-list">
-                                        <i class="fas fa-envelope"></i> Task List</a>`);
+                                        <i class="fas fa-list"></i> Task List</a>`);
+
+            AddNavigationEvents();
 
             // swap out the login link for logout
             $("#login").html(
                 `<a id="logout" class="nav-link" href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>`
             );
 
-            AddNavigationEvents();
 
             $("#logout").on("click", function()
             {
