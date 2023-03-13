@@ -391,18 +391,22 @@
         // if user is logged in
         if(sessionStorage.getItem("user"))
         {
-            $("#task-list").html(
-                `<a class="nav-link" data="task-list"><i class="fas fa-envelope"></i> Task List</a>`);
+            $("#task-list").html(`<a class="nav-link" data="task-list">
+                                        <i class="fas fa-envelope"></i> Task List</a>`);
 
             // swap out the login link for logout
             $("#login").html(
                 `<a id="logout" class="nav-link" href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>`
             );
 
+            AddNavigationEvents();
+
             $("#logout").on("click", function()
             {
                 // perform logout
                 sessionStorage.clear();
+
+                $("#task-list").html(``);
 
                  // swap out the logout link for login
                 $("#login").html(

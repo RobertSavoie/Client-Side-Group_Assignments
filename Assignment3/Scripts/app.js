@@ -220,10 +220,13 @@
     }
     function CheckLogin() {
         if (sessionStorage.getItem("user")) {
-            $("#task-list").html(`<a class="nav-link" data="task-list"><i class="fas fa-envelope"></i> Task List</a>`);
+            $("#task-list").html(`<a class="nav-link" data="task-list">
+                                        <i class="fas fa-envelope"></i> Task List</a>`);
             $("#login").html(`<a id="logout" class="nav-link" href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>`);
+            AddNavigationEvents();
             $("#logout").on("click", function () {
                 sessionStorage.clear();
+                $("#task-list").html(``);
                 $("#login").html(`<a class="nav-link" data="login"><i class="fas fa-sign-in-alt"></i> Login</a>`);
                 AddNavigationEvents();
                 LoadLink("login");

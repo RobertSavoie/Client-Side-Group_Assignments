@@ -1,5 +1,5 @@
-/safe_area/
-/.idea/inspectionProfiles/
-/.idea/dictionaries/
+# IDE stuff
+/.idea/
+#Assignemnt Stuff
 /Assignment1/node_modules/
 /Assignment2/node_modules/
