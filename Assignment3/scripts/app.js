@@ -54,7 +54,7 @@
         });
     }
     function LoadHeader() {
-        $.get("./Views/components/header.html", function (html_data) {
+        $.get("./views/components/header.html", function (html_data) {
             $("header").html(html_data);
             AddNavigationEvents();
             CheckLogin();
@@ -63,13 +63,13 @@
     function LoadContent() {
         let page_name = router.ActiveLink;
         let callback = ActiveLinkCallBack();
-        $.get(`./Views/content/${page_name}.html`, function (html_date) {
+        $.get(`./views/content/${page_name}.html`, function (html_date) {
             $("main").html(html_date);
             callback();
         });
     }
     function LoadFooter() {
-        $.get(`./Views/components/footer.html`, function (html_date) {
+        $.get(`./views/components/footer.html`, function (html_date) {
             $("footer").html(html_date);
         });
     }
@@ -241,7 +241,7 @@
         $("#loginButton").on("click", function () {
             let success = false;
             let newUser = new core.User();
-            $.get("./Data/users.json", function (data) {
+            $.get("./data/users.json", function (data) {
                 for (const user of data.users) {
                     let username = document.forms[0].username.value;
                     let password = document.forms[0].password.value;

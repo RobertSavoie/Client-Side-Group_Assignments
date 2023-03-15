@@ -104,7 +104,7 @@
     function LoadHeader(): void
     {
         // use AJAX to load the header content
-        $.get("./Views/components/header.html", function(html_data)
+        $.get("./views/components/header.html", function(html_data)
         {
             // inject Header content into the page
             $("header").html(html_data);
@@ -124,7 +124,7 @@
     {
         let page_name = router.ActiveLink; // alias for the Active Link
         let callback = ActiveLinkCallBack(); // returns a reference to the correct function
-        $.get(`./Views/content/${page_name}.html`, function(html_date)
+        $.get(`./views/content/${page_name}.html`, function(html_date)
         {
             $("main").html(html_date);
             callback(); // calling the correct function 
@@ -137,7 +137,7 @@
      */
     function LoadFooter(): void
     {
-        $.get(`./Views/components/footer.html`, function(html_date)
+        $.get(`./views/components/footer.html`, function(html_date)
         {
             $("footer").html(html_date);
         });
@@ -437,7 +437,7 @@
             let newUser = new core.User();
 
             // uses jQuery shortcut to load the users.json file
-            $.get("./Data/users.json", function(data)
+            $.get("./data/users.json", function(data)
             {
                 // for every user in the users.json file
                 for (const user of data.users) 

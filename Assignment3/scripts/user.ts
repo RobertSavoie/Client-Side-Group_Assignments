@@ -71,9 +71,7 @@ namespace core
         }
 
         // utility methods
-
-        // TODO: need to fix the Return type
-        toJSON()
+        toJSON() : {Username : string, DisplayName : string, EmailAddress : string}
         {
             return {
                 "DisplayName": this.DisplayName,
@@ -82,8 +80,7 @@ namespace core
             }
         }
 
-        // TODO: need to fix the parameter data type
-        fromJSON(data: any): void
+        fromJSON(data : User): void
         {
             this.DisplayName = data.DisplayName;
             this.EmailAddress = data.EmailAddress;
