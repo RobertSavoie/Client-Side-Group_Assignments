@@ -492,6 +492,15 @@
         console.log("Register Page");
 
         AddLinkEvents("login");
+
+        $("#cancelButton").on("click", function()
+        {
+            // clear the login form
+            document.forms[0].reset();
+
+            // return to the home page
+            LoadLink("home");
+        });
     }
 
     function Display404Page(): void

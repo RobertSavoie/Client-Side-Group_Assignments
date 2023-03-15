@@ -270,6 +270,10 @@
     function DisplayRegisterPage() {
         console.log("Register Page");
         AddLinkEvents("login");
+        $("#cancelButton").on("click", function () {
+            document.forms[0].reset();
+            LoadLink("home");
+        });
     }
     function Display404Page() {
     }

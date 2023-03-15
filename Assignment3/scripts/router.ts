@@ -34,7 +34,7 @@ namespace core
          }
  
          /**
-          * @param {string} link
+          * @param {string} data
           */
          public set LinkData(data: string)
          {
