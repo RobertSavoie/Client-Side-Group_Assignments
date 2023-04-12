@@ -6,7 +6,9 @@ import logger from 'morgan';
 import mongoose from 'mongoose';
 
 import indexRouter from '../routes/index';
-import contactsRouter from '../routes/contacts';
+import authRouter from '../routes/auth';
+import contactListRouter from '../routes/contact-list';
+
 import * as DBConfig from './db';
 // mongoose.connect(DBConfig.LocalURI);
 mongoose.connect(DBConfig.RemoteURI);
@@ -63,7 +65,8 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 app.use('/', indexRouter);
-app.use('/users', contactsRouter);
+app.use('/', authRouter);
+app.use('/', contactListRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
