@@ -11,7 +11,7 @@ function DisplayAboutPage(req, res, next) {
 }
 exports.DisplayAboutPage = DisplayAboutPage;
 function DisplayProductPage(req, res, next) {
-    res.render('index', { title: 'Products', page: 'products', displayName: (0, util_1.UserDisplayName)(req) });
+    res.render('index', { title: 'Projects', page: 'products', displayName: (0, util_1.UserDisplayName)(req) });
 }
 exports.DisplayProductPage = DisplayProductPage;
 function DisplayServicePage(req, res, next) {
