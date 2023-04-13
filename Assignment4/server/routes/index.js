@@ -12,5 +12,6 @@ router.get('/about', controller_1.DisplayAboutPage);
 router.get('/products', controller_1.DisplayProductPage);
 router.get('/services', controller_1.DisplayServicePage);
 router.get('/contact', controller_1.DisplayContactPage);
+router.post('/contact', controller_1.ProcessContactPage);
 exports.default = router;
 //# sourceMappingURL=index.js.map

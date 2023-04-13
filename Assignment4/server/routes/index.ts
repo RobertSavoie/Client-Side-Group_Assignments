@@ -4,7 +4,8 @@ import {
     DisplayContactPage,
     DisplayHomePage,
     DisplayProductPage,
-    DisplayServicePage
+    DisplayServicePage,
+    ProcessContactPage
 } from "../controller";
 
 const router = express.Router();
@@ -21,5 +22,7 @@ router.get('/products', DisplayProductPage);
 router.get('/services', DisplayServicePage);
 
 router.get('/contact', DisplayContactPage);
+
+router.post('/contact', ProcessContactPage);
 
 export default router;
