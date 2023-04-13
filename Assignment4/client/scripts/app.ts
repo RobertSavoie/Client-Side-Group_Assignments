@@ -1,6 +1,5 @@
 "use strict";
 
-import ClickEvent = JQuery.ClickEvent;
 
 (function(){
 
@@ -17,12 +16,6 @@ import ClickEvent = JQuery.ClickEvent;
 
     function DisplayHomePage() : void {
         console.log("Home Page")
-
-        $("main").append(`<p id="MainParagraph" class="mt-3">This is the Main Paragraph!</p>`);
-
-        $("main").append(`<article>
-                        <p id="ArticleParagraph" class="mt-3">This is my Article Paragraph</p>
-                        </article>`);
     }
 
     function DisplayProductsPage() : void {
