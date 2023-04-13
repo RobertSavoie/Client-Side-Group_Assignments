@@ -9,7 +9,7 @@ const contact_1 = __importDefault(require("../models/contact"));
 function DisplayContactList(req, res, next) {
     contact_1.default.find().then(function (data) {
         res.render('index', {
-            title: 'Contact List', page: 'contact-list',
+            title: 'Business Contacts', page: 'contact-list',
             contacts: data, displayName: (0, util_1.UserDisplayName)(req)
         });
     }).catch(function (err) {

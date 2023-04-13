@@ -6,7 +6,7 @@ export function DisplayContactList(req: Request, res: Response, next: NextFuncti
     Contact.find().then(function (data) {
         // console.log(data);
         res.render('index', {
-            title: 'Contact List', page: 'contact-list',
+            title: 'Business Contacts', page: 'contact-list',
             contacts: data, displayName: UserDisplayName(req)
         });
     }).catch(function (err) {
