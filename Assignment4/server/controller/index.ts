@@ -8,7 +8,7 @@ export function DisplayAboutPage(req : Request, res : Response, next : NextFunct
     res.render('index', {title: 'About Us', page: 'about', displayName: UserDisplayName(req)});
 }
 export function DisplayProductPage(req : Request, res : Response, next : NextFunction) : void{
-    res.render('index', {title: 'Products', page: 'products', displayName: UserDisplayName(req)});
+    res.render('index', {title: 'Projects', page: 'products', displayName: UserDisplayName(req)});
 }
 export function DisplayServicePage(req : Request, res : Response, next : NextFunction) : void{
     res.render('index', {title: 'Our Services', page: 'services', displayName: UserDisplayName(req)});
