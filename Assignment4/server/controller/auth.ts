@@ -3,6 +3,7 @@ import {UserDisplayName} from "../util";
 import passport from "passport";
 import User from "../models/user";
 
+// This function displays login page
 export function DisplayLoginPage(req : Request, res : Response, next : NextFunction) : void{
     if (!req.user) {
         return res.render('index', {
@@ -12,7 +13,7 @@ export function DisplayLoginPage(req : Request, res : Response, next : NextFunct
     }
     return res.redirect('/contact-list');
 }
-
+// This function process the post for login page
 export function ProcessLoginPage(req : Request, res : Response, next : NextFunction) : void{
     passport.authenticate('local', function (err: Error, user: any, info: string) {
 
@@ -36,7 +37,7 @@ export function ProcessLoginPage(req : Request, res : Response, next : NextFunct
 
     })(req, res, next);
 }
-
+// This function process the post for register page
 export function DisplayRegisterPage(req : Request, res : Response, next : NextFunction) : void{
     if (!req.user) {
         return res.render('index', {
@@ -46,7 +47,7 @@ export function DisplayRegisterPage(req : Request, res : Response, next : NextFu
     }
     return res.redirect('/contact-list');
 }
-
+// This function displays register page.
 export function ProcessRegisterPage(req : Request, res : Response, next : NextFunction) : void{
     let newUser = new User({
         username: req.body.username,
@@ -72,7 +73,7 @@ export function ProcessRegisterPage(req : Request, res : Response, next : NextFu
 
     });
 }
-
+// This function process the post for logout page
 export function ProcessLogoutPage(req : Request, res : Response, next : NextFunction) : void{
     req.logOut(function (err) {
         if (err) {
